@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIM INTERIORS AND CONSTRUCTION COMPANY | Services</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* NAVIGATION */
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    gap: 25px;
+    background: #2c3e50;
+    padding: 15px 30px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a.active {
+    border-bottom: 2px solid #e67e22;
+}
+
+/* HERO */
+.hero {
+    background: url("images/services-bg.jpg") center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.hero h1 {
+    font-family: 'Algeria', serif;
+    font-size: 48px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-family: 'Lucida Handwriting', cursive;
+    font-size: 28px;
+    margin-top: 10px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+/* SERVICE BUTTONS */
+.service-btns {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 50px 0;
+}
+
+.service-btns button {
+    background: #e67e22;
+    color: white;
+    border: none;
+    padding: 15px 25px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.service-btns button:hover {
+    background: #d35400;
+}
+
+/* FOOTER */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .service-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Our Services</h1>
+    <p>Choose your service below</p>
+</section>
+
+<!-- SERVICE BUTTONS -->
+<div class="service-btns">
+    <button onclick="location.href='interior.html'">Interior Designs</button>
+    <button onclick="location.href='construction.html'">Constructions</button>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    &copy; 2026 KIM INTERIORS AND CONSTRUCTION COMPANY. All Rights Reserved.
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIM INTERIORS & CONSTRUCTION COMPANY | Home</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* NAVIGATION */
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 25px;
+    background: #2c3e50;
+    padding: 15px 30px;
+    position: relative;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navbar a.active {
+    border-bottom: 2px solid #e67e22;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: #2c3e50;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+    z-index: 10;
+    border-radius: 6px;
+    flex-direction: column;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #e67e22;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: flex;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+                url("images/background.jpg") center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.hero img.logo {
+    height: 180px;      /* Logo doubled size */
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: 'Algeria', serif;
+    font-size: 48px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-family: 'Lucida Handwriting', cursive;
+    font-size: 28px;
+    margin-top: 10px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+/* ABOUT SECTION */
+.about-section {
+    max-width: 1000px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.about-btn {
+    background: #e67e22;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.about-sub {
+    display: none;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.about-sub button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.about-content {
+    display: none;
+    margin-top: 25px;
+    line-height: 1.8;
+    color: #333;
+}
+
+.about-content h3 {
+    color: #2c3e50;
+}
+
+/* FOOTER */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .hero h1 {
+        font-size: 32px;
+    }
+    .hero p {
+        font-size: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <a href="index.html" class="active">Home</a>
+    
+    <!-- Services Dropdown -->
+    <div class="dropdown">
+        <a>Services ▼</a>
+        <div class="dropdown-content">
+            <a href="interior.html">Interior Designs</a>
+            <a href="construction.html">Constructions</a>
+        </div>
+    </div>
+
+    <a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <img src="images/logo.jpg" alt="Kim Interiors Logo" class="logo">
+    <h1>KIM INTERIORS & CONSTRUCTION COMPANY</h1>
+    <p>DETAILS DEFINE THE DIFFERENCE</p>
+</section>
+
+<!-- ABOUT US -->
+<section class="about-section">
+    <button class="about-btn" onclick="toggleAbout()">About Us</button>
+
+    <div class="about-sub" id="aboutSub">
+        <button onclick="showAbout('who')">Who We Are</button>
+        <button onclick="showAbout('mission')">Mission & Vision</button>
+        <button onclick="showAbout('contacts')">Contacts</button>
+    </div>
+
+    <div class="about-content" id="who">
+        <h3>Home &gt; About Us</h3>
+        <p>
+            Kim Interiors is a professional interior design and construction company
+            dedicated to creating modern, stylish, and functional spaces.
+        </p>
+        <p>
+            We specialize in residential and commercial interior designs and constructions,
+            blending creativity with quality workmanship.
+        </p>
+    </div>
+
+    <div class="about-content" id="mission">
+        <p><strong>Mission:</strong> To transform spaces into inspiring environments.</p>
+        <p><strong>Vision:</strong> To be a leading interior design and construction brand in Kenya.</p>
+    </div>
+
+    <div class="about-content" id="contacts">
+        <p>
+            📍 Eldoret, UasinGishu, Rift Valley<br>
+            📧 kim.interiorke@gmail.com<br>
+            📞 +254 716 631 840
+        </p>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    &copy; 2026 KIM INTERIORS & CONSTRUCTION COMPANY. All Rights Reserved.
+</footer>
+
+<!-- SCRIPT -->
+<script>
+function toggleAbout() {
+    let sub = document.getElementById("aboutSub");
+    sub.style.display = sub.style.display === "flex" ? "none" : "flex";
+}
+
+function showAbout(id) {
+    document.querySelectorAll(".about-content")
+        .forEach(div => div.style.display = "none");
+    document.getElementById(id).style.display = "block";
+}
+</script>
+
+</body>
+</html>

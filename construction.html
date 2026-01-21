@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIM INTERIORS AND CONSTRUCTION COMPANY | Constructions</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* NAVIGATION */
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    gap: 25px;
+    background: #2c3e50;
+    padding: 15px 30px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a.active {
+    border-bottom: 2px solid #e67e22;
+}
+
+/* HERO */
+.hero {
+    background: url("images/construction-hero.jpg") center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.hero h1 {
+    font-family: 'Algeria', serif;
+    font-size: 48px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-family: 'Lucida Handwriting', cursive;
+    font-size: 28px;
+    margin-top: 10px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+/* SERVICES CONTAINER */
+.services-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin: 50px;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 300px;
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.service-card:hover { transform: translateY(-5px); }
+
+.service-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.service-card h3 { margin: 15px 0 10px; }
+
+.service-card button {
+    background: #3498db;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.service-card button:hover { background: #2980b9; }
+
+/* FOOTER */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+    .services-container { flex-direction: column; align-items: center; }
+    .service-card { width: 90%; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="contact.html">Contact</a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Constructions</h1>
+    <p>Building Dreams into Reality</p>
+</section>
+
+<!-- CONSTRUCTION SERVICES -->
+<div class="services-container">
+    <div class="service-card">
+        <img src="images/residential.jpg" alt="Residential Construction">
+        <h3>Residential Construction</h3>
+        <p>We create modern, durable, and beautiful homes tailored to your style.</p>
+    </div>
+
+    <div class="service-card">
+        <img src="images/commercial.jpg" alt="Commercial Construction">
+        <h3>Commercial Construction</h3>
+        <p>Our commercial projects are built with precision, safety, and aesthetics in mind.</p>
+    </div>
+
+    <div class="service-card">
+        <img src="images/renovation.jpg" alt="Renovation Projects">
+        <h3>Renovations & Remodeling</h3>
+        <p>Upgrade your space with our remodeling and renovation expertise.</p>
+    </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+    &copy; 2026 KIM INTERIORS AND CONSTRUCTION COMPANY. All Rights Reserved.
+</footer>
+
+</body>
+</html>
