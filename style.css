@@ -18,13 +18,13 @@ img {
     justify-content: flex-start;
     align-items: center;
     gap: 25px;
-    background: #87CEEB; /* Sky Blue background */
+    background: #ADD8E6; /* Lighter sky blue */
     padding: 15px 40px;
     flex-wrap: wrap;
 }
 
 .navbar a {
-    color: white;
+    color: #2c3e50; /* Dark text for contrast */
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
@@ -32,7 +32,7 @@ img {
 }
 
 .navbar a:hover {
-    color: #e67e22; /* Orange accent for hover */
+    color: #e67e22; /* Orange hover accent */
 }
 
 .navbar a.active {
@@ -50,23 +50,24 @@ img {
     position: absolute;
     left: 0;
     top: 100%;
-    background-color: #87CEEB; /* Match navbar sky blue */
+    background-color: #ADD8E6; /* Matches navbar */
     min-width: 180px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
     z-index: 10;
     border-radius: 6px;
     flex-direction: column;
 }
 
 .dropdown-content a {
-    color: white;
+    color: #2c3e50; /* Dark text for dropdown items */
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
 
 .dropdown-content a:hover {
-    background-color: #e67e22; /* Orange hover for dropdown items */
+    background-color: #e67e22;
+    color: white;
 }
 
 /* Show dropdown on hover */
