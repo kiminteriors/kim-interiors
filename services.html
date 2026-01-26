@@ -4,8 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KIM INTERIORS AND CONSTRUCTION COMPANY | Services</title>
+
 <style>
-/* GLOBAL RESET */
+/* ================= GLOBAL RESET ================= */
 * {
     margin: 0;
     padding: 0;
@@ -13,11 +14,13 @@
     font-family: Arial, sans-serif;
 }
 
-body {
-    background: #f4f4f4;
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
-/* NAVBAR */
+/* ================= NAVIGATION ================= */
 .navbar {
     display: flex;
     justify-content: flex-start;
@@ -36,21 +39,26 @@ body {
     transition: color 0.3s;
 }
 
-.navbar a:hover { color: #e67e22; }
-.navbar a.active { border-bottom: 3px solid #e67e22; }
+.navbar a:hover {
+    color: #e67e22;
+}
 
-/* HERO */
+.navbar a.active {
+    border-bottom: 3px solid #e67e22;
+}
+
+/* ================= HERO ================= */
 .hero {
     text-align: center;
     color: white;
-    padding: 160px 20px;
+    padding: 120px 20px;
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
                 url("images/services-bg.jpg") center/cover no-repeat;
 }
 
 .hero h1 {
     font-family: 'Algeria', serif;
-    font-size: 50px;
+    font-size: 48px;
     margin-bottom: 15px;
     text-transform: uppercase;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
@@ -58,63 +66,36 @@ body {
 
 .hero p {
     font-family: 'Lucida Handwriting', cursive;
-    font-size: 28px;
+    font-size: 26px;
     text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
 
-/* SERVICES GRID LAYOUT */
-.services-container {
-    max-width: 1200px;
-    margin: 60px auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-    padding: 0 20px;
+/* ================= SERVICE BUTTONS ================= */
+.service-btns {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin: 50px 20px;
+    flex-wrap: wrap;
 }
 
-.service-card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    overflow: hidden;
+.service-btns button {
+    background: linear-gradient(135deg, #e67e22, #f39c12);
+    color: white;
+    border: none;
+    padding: 18px 30px;
+    font-size: 18px;
+    border-radius: 10px;
     cursor: pointer;
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: all 0.3s ease;
 }
 
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+.service-btns button:hover {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    transform: translateY(-3px);
 }
 
-.service-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.service-card-content {
-    padding: 20px;
-    text-align: center;
-}
-
-.service-card-content h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: #2c3e50;
-}
-
-.service-card-content p {
-    font-size: 16px;
-    color: #555;
-    display: none; /* initially hidden for accordion effect */
-}
-
-/* SHOW DESCRIPTION ON CLICK */
-.service-card.active p {
-    display: block;
-}
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer {
     background: #2c3e50;
     color: white;
@@ -123,11 +104,20 @@ footer {
     margin-top: 50px;
 }
 
-/* RESPONSIVE */
-@media(max-width:768px){
-    .hero h1{ font-size: 36px; }
-    .hero p{ font-size: 20px; }
-    .services-container{ gap: 20px; }
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 768px) {
+    .service-btns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 20px;
+    }
 }
 </style>
 </head>
@@ -147,40 +137,16 @@ footer {
     <p>Choose your service below</p>
 </section>
 
-<!-- SERVICES GRID -->
-<div class="services-container">
-    <div class="service-card" onclick="toggleDescription(this)">
-        <img src="images/interior-hero.jpg" alt="Interior Designs">
-        <div class="service-card-content">
-            <h3>Interior Designs</h3>
-            <p>
-                We specialize in creating inspiring interior spaces, including walls, ceilings, flooring, cabinets, lighting, fittings, and handover services.
-            </p>
-        </div>
-    </div>
-
-    <div class="service-card" onclick="toggleDescription(this)">
-        <img src="images/construction-hero.jpg" alt="Constructions">
-        <div class="service-card-content">
-            <h3>Constructions</h3>
-            <p>
-                Our construction services include planning, substructure, superstructure, electrical & plumbing provisions, plastering, and screeding for residential and commercial projects.
-            </p>
-        </div>
-    </div>
+<!-- SERVICE BUTTONS -->
+<div class="service-btns">
+    <button onclick="location.href='interior.html'">Interior Designs</button>
+    <button onclick="location.href='construction.html'">Constructions</button>
 </div>
 
 <!-- FOOTER -->
 <footer>
     &copy; 2026 KIM INTERIORS AND CONSTRUCTION COMPANY. All Rights Reserved.
 </footer>
-
-<!-- SCRIPT FOR TOGGLE DESCRIPTION -->
-<script>
-function toggleDescription(card){
-    card.classList.toggle('active');
-}
-</script>
 
 </body>
 </html>
