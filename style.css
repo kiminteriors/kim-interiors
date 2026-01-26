@@ -12,172 +12,79 @@ img {
     display: block;
 }
 
-/* ================= HEADER ================= */
-header {
-    background-color: #2c3e50;
-    width: 100%;
-}
-
-/* NAVIGATION – LEFT ALIGNED */
-.center-nav ul {
-    list-style: none;
+/* ================= NAVIGATION ================= */
+.navbar {
     display: flex;
     justify-content: flex-start;
-    gap: 30px;
-    padding: 20px 40px;
+    align-items: center;
+    gap: 25px;
+    background: #2c3e50;
+    padding: 15px 40px;
+    flex-wrap: wrap;
 }
 
-.center-nav ul li a {
+.navbar a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
+    transition: color 0.3s;
 }
 
-.center-nav ul li a:hover {
-    color: #3498db;
+.navbar a:hover {
+    color: #e67e22;
 }
 
-/* ================= HERO SECTION ================= */
+.navbar a.active {
+    border-bottom: 3px solid #e67e22;
+}
+
+/* ================= HERO ================= */
 .hero {
     text-align: center;
-    padding: 160px 20px;
     color: white;
-    background:
-        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
-        url('images/home-bg.jpg') no-repeat center center/cover;
-}
-
-/* HERO LOGO */
-.hero-logo {
-    display: none;
-    width: 180px;
-    max-width: 50%;
-    margin: 0 auto 20px;
-}
-
-body.home .hero-logo {
-    display: block;
+    padding: 120px 20px;
+    position: relative;
 }
 
 .hero h1 {
-    font-size: 50px;
-    margin-bottom: 20px;
+    font-family: 'Algeria', serif;
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
 
 .hero p {
-    font-size: 20px;
-    margin-bottom: 40px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.6;
+    font-family: 'Lucida Handwriting', cursive;
+    font-size: 26px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
 
-/* HERO BUTTONS */
-.hero .btn {
-    display: inline-block;
-    padding: 14px 36px;
-    background-color: #e74c3c;
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    border-radius: 6px;
-    margin: 5px;
-    transition: background-color 0.3s, transform 0.3s;
+/* ================= SERVICE CARDS LAYOUT ================= */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
 }
 
-.hero .btn:hover {
-    background-color: #c0392b;
-    transform: translateY(-2px);
-}
-
-.hero .btn-secondary {
-    background-color: #3498db;
-}
-
-.hero .btn-secondary:hover {
-    background-color: #2980b9;
-}
-
-/* ================= FEATURED SERVICES ================= */
-.featured-services {
-    text-align: center;
-    padding: 60px 20px;
-    background-color: #f9f9f9;
-}
-
-.featured-services h2 {
-    font-size: 36px;
-    margin-bottom: 40px;
-}
-
-.service-gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-.gallery-card {
-    background-color: white;
-    padding: 15px;
-    border-radius: 10px;
-    width: 280px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
-}
-
-.gallery-card:hover {
-    transform: translateY(-5px);
-}
-
-.gallery-card img {
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.gallery-card h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-}
-
-/* BUTTON */
-.gallery-card .btn-small {
-    padding: 8px 20px;
-    background-color: #3498db;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-}
-
-.gallery-card .btn-small:hover {
-    background-color: #2980b9;
-}
-
-/* ================= SERVICES PAGE ================= */
-.services {
-    padding: 50px 20px;
-}
-
-.service-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
-}
-
-/* SERVICE CARD */
 .service-card {
-    background-color: #f7f7f7;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
 }
 
 .service-card img {
@@ -188,102 +95,108 @@ body.home .hero-logo {
     margin-bottom: 15px;
 }
 
-.service-card h3 {
-    margin-bottom: 12px;
-}
-
-/* LIST FIX */
-.service-card ul {
-    list-style-position: outside;
-    padding-left: 20px;
-    margin-top: 10px;
-}
-
-.service-card ul li {
-    margin-bottom: 8px;
-    line-height: 1.6;
-    text-align: left;
-}
-
-/* ================= CONTACT PAGE ================= */
-.contact {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #f7f7f7;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
-
-.contact h1 {
+.service-card-content h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 20px;
     text-align: center;
-    margin-bottom: 20px;
 }
 
-.contact form input,
-.contact form textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
+.service-card-content ul {
+    display: none;
+    padding-left: 20px;
+    color: #333;
+    line-height: 1.6;
 }
 
-.contact form button {
-    width: 100%;
-    padding: 12px;
-    background-color: #e74c3c;
-    color: white;
-    border: none;
-    font-size: 18px;
-    font-weight: bold;
-    border-radius: 5px;
+.service-card-content ul li {
+    margin-bottom: 8px;
 }
 
 /* ================= FOOTER ================= */
 footer {
+    background: #2c3e50;
+    color: white;
     text-align: center;
-    padding: 20px;
-    background-color: #2c3e50;
+    padding: 25px;
+    margin-top: 50px;
+}
+
+/* ================= BUTTONS ================= */
+button, .hero .btn, .gallery-card .btn-small, .service-btns button {
+    border: none;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.service-btns button, .gallery-card .btn-small {
+    background: linear-gradient(135deg, #e67e22, #f39c12);
     color: white;
 }
 
-/* ================= MOBILE RESPONSIVE FIX ================= */
+.service-btns button:hover, .gallery-card .btn-small:hover {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    transform: translateY(-2px);
+}
+
+/* ================= ABOUT SECTION ================= */
+.about-section {
+    max-width: 1000px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.about-btn {
+    background: linear-gradient(135deg, #e67e22, #f39c12);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.about-btn:hover {
+    transform: translateY(-2px);
+}
+
+.about-sub button {
+    background: #3498db;
+    color: white;
+    padding: 10px 14px;
+    margin-right: 10px;
+}
+
+.about-sub button:hover {
+    background: #2980b9;
+}
+
+/* ================= MOBILE RESPONSIVE ================= */
+@media (max-width: 1024px) {
+    .services-container {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
-
-    .hero {
-        padding: 80px 15px;
-    }
-
     .hero h1 {
-        font-size: 30px;
+        font-size: 36px;
     }
 
-    .hero-logo {
-        width: 140px;
+    .hero p {
+        font-size: 20px;
     }
 
-    .gallery-card,
-    .service-card {
-        width: 90%;
-    }
-
-    .center-nav ul {
+    .navbar {
         justify-content: center;
     }
 
-    /* 🔥 KEY FIX FOR YOUR PROBLEM */
-    .service-card {
-        text-align: left;
-    }
-
-    .service-card h3 {
-        text-align: center;
-    }
-
-    .service-card ul {
-        padding-left: 18px;
-    }
-
-    .service-card ul li {
-        text-align: left;
+    .about-sub button {
+        margin-bottom: 10px;
     }
 }
