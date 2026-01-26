@@ -18,13 +18,14 @@ img {
     justify-content: flex-start;
     align-items: center;
     gap: 25px;
-    background: #ADD8E6; /* Lighter sky blue */
+    background: #D6F0FA; /* MUCH lighter sky blue */
     padding: 15px 40px;
     flex-wrap: wrap;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle shadow */
 }
 
 .navbar a {
-    color: #2c3e50; /* Dark text for contrast */
+    color: #2c3e50; /* Dark text for readability */
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
@@ -50,9 +51,9 @@ img {
     position: absolute;
     left: 0;
     top: 100%;
-    background-color: #ADD8E6; /* Matches navbar */
+    background-color: #D6F0FA; /* Matches navbar */
     min-width: 180px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
     z-index: 10;
     border-radius: 6px;
     flex-direction: column;
