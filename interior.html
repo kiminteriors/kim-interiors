@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KIM INTERIORS AND CONSTRUCTION COMPANY | Interior Designs</title>
+<title>KIM CONSTRUCTION & INTERIOR DESIGNS COMPANY | Interior Designs</title>
 
 <style>
 body {
@@ -56,43 +56,52 @@ body {
 
 /* SERVICES CONTAINER */
 .services-container {
+    max-width: 1000px;
+    margin: 50px auto;
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
-    margin: 50px;
+    flex-direction: column;
+    gap: 20px;
 }
 
+/* Department card */
 .service-card {
     background: #fff;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    width: 300px;
-    text-align: center;
     padding: 20px;
-    transition: transform 0.3s;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
 }
 
-.service-card:hover { transform: translateY(-5px); }
-
 .service-card img {
-    width: 100%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
     border-radius: 10px;
 }
 
-.service-card h3 { margin: 15px 0 10px; }
-
-.service-card button {
-    background: #3498db;
-    color: #fff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1em;
+.service-card-content {
+    flex: 1;
 }
 
-.service-card button:hover { background: #2980b9; }
+.service-card-content h3 {
+    margin: 0;
+    cursor: pointer;
+    color: #2c3e50;
+}
+
+.service-card-content ul {
+    display: none;
+    margin-top: 10px;
+    padding-left: 20px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.service-card-content ul li {
+    margin-bottom: 8px;
+}
 
 /* FOOTER */
 footer {
@@ -105,8 +114,9 @@ footer {
 
 /* MOBILE */
 @media (max-width: 800px) {
-    .services-container { flex-direction: column; align-items: center; }
-    .service-card { width: 90%; }
+    .services-container { width: 90%; margin: 30px auto; }
+    .service-card { flex-direction: column; align-items: center; text-align: center; }
+    .service-card img { margin-bottom: 10px; }
 }
 </style>
 </head>
@@ -128,29 +138,88 @@ footer {
 
 <!-- INTERIOR DESIGN SERVICES -->
 <div class="services-container">
+
+    <!-- 1. Walls & Ceiling Works -->
     <div class="service-card">
-        <img src="images/livingroom.jpg" alt="Living Room Design">
-        <h3>Living Room Design</h3>
-        <p>Cozy, stylish, and modern living room designs tailored to your taste.</p>
+        <img src="images/walls-ceiling.jpg" alt="Walls and Ceiling Works">
+        <div class="service-card-content">
+            <h3 onclick="toggleSub(this)">1. Walls & Ceiling Works</h3>
+            <ul>
+                <li>Wall skimming for smooth and flawless finishes</li>
+                <li>Ceiling designing (gypsum, POP & modern ceiling styles)</li>
+            </ul>
+        </div>
     </div>
 
+    <!-- 2. Floor Designs -->
     <div class="service-card">
-        <img src="images/bedroom.jpg" alt="Bedroom Design">
-        <h3>Bedroom Design</h3>
-        <p>Comfortable and relaxing bedroom layouts with perfect lighting and decor.</p>
+        <img src="images/floor-design.jpg" alt="Floor Designs">
+        <div class="service-card-content">
+            <h3 onclick="toggleSub(this)">2. Floor Designs</h3>
+            <ul>
+                <li>Tiles floors</li>
+                <li>Wood-tiled floors</li>
+            </ul>
+        </div>
     </div>
 
+    <!-- 3. Cabinets & Lightings -->
     <div class="service-card">
-        <img src="images/kitchen.jpg" alt="Kitchen Design">
-        <h3>Kitchen Design</h3>
-        <p>Functional and modern kitchens with smart storage and elegant finishes.</p>
+        <img src="images/cabinets-lighting.jpg" alt="Cabinets and Lighting">
+        <div class="service-card-content">
+            <h3 onclick="toggleSub(this)">3. Cabinets & Lightings</h3>
+            <ul>
+                <li>Wardrobes</li>
+                <li>Kitchen cabinets</li>
+                <li>Lighting designs (ambient, task & decorative lighting)</li>
+            </ul>
+        </div>
     </div>
+
+    <!-- 4. Fitting Work Designs -->
+    <div class="service-card">
+        <img src="images/fittings.jpg" alt="Fitting Works">
+        <div class="service-card-content">
+            <h3 onclick="toggleSub(this)">4. Fitting Work Designs</h3>
+            <ul>
+                <li>Ceramics fittings</li>
+                <li>Taps and sanitary fittings</li>
+                <li>Curtains and blinds</li>
+                <li>Aluminium works</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 5. Cleaning & Hand Over -->
+    <div class="service-card">
+        <img src="images/cleaning-handover.jpg" alt="Cleaning and Handover">
+        <div class="service-card-content">
+            <h3 onclick="toggleSub(this)">5. Cleaning & Hand Over</h3>
+            <ul>
+                <li>
+                    Thorough cleaning of all interior spaces after completion of works.
+                </li>
+                <li>
+                    Final inspection and professional handover of the finished interior to the client.
+                </li>
+            </ul>
+        </div>
+    </div>
+
 </div>
 
 <!-- FOOTER -->
 <footer>
-    &copy; 2026 KIM INTERIORS AND CONSTRUCTION COMPANY. All Rights Reserved.
+    &copy; 2026 KIM CONSTRUCTION & INTERIOR DESIGNS COMPANY. All Rights Reserved.
 </footer>
+
+<!-- SCRIPT -->
+<script>
+function toggleSub(element) {
+    let ul = element.nextElementSibling;
+    ul.style.display = ul.style.display === "block" ? "none" : "block";
+}
+</script>
 
 </body>
 </html>
