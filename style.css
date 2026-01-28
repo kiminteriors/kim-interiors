@@ -1,4 +1,4 @@
-/* ================= GLOBAL RESET ================= */
+/* GLOBAL */
 * {
     margin: 0;
     padding: 0;
@@ -6,234 +6,70 @@
     font-family: Arial, sans-serif;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
+body {
+    background: #f8f9fa;
+    color: #333;
 }
 
-/* ================= NAVIGATION ================= */
-.navbar {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 25px;
-    background: #D6F0FA; /* MUCH lighter sky blue */
-    padding: 15px 40px;
-    flex-wrap: wrap;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* subtle shadow */
-}
-
-.navbar a {
-    color: #2c3e50; /* Dark text for readability */
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-    transition: color 0.3s;
-}
-
-.navbar a:hover {
-    color: #e67e22; /* Orange hover accent */
-}
-
-.navbar a.active {
-    border-bottom: 3px solid #e67e22;
-}
-
-/* Dropdown container */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: #D6F0FA; /* Matches navbar */
-    min-width: 180px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.15);
-    z-index: 10;
-    border-radius: 6px;
-    flex-direction: column;
-}
-
-.dropdown-content a {
-    color: #2c3e50; /* Dark text for dropdown items */
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-.dropdown-content a:hover {
-    background-color: #e67e22;
-    color: white;
-}
-
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-    display: flex;
-}
-
-/* ================= HERO ================= */
-.hero {
+/* HEADER */
+header {
     text-align: center;
-    color: white;
-    padding: 120px 20px;
-    position: relative;
+    padding: 40px 20px;
+    background: #ffffff;
 }
 
-.hero h1 {
-    font-family: 'Algeria', serif;
-    font-size: 48px;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+header h1 {
+    font-size: 32px;
+    margin-bottom: 10px;
 }
 
-.hero p {
-    font-family: 'Lucida Handwriting', cursive;
-    font-size: 26px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+header p {
+    color: #666;
 }
 
-/* ================= SERVICE CARDS LAYOUT ================= */
-.services-container {
+/* SERVICES GRID */
+.services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 25px;
+    padding: 40px;
     max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
+    margin: auto;
 }
 
+/* SERVICE CARD */
 .service-card {
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
 }
 
 .service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    transform: translateY(-6px);
 }
 
 .service-card img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
 }
 
-.service-card-content h3 {
-    color: #2c3e50;
-    margin-bottom: 10px;
-    cursor: pointer;
+.service-card h3 {
+    padding: 15px;
     font-size: 20px;
-    text-align: center;
 }
 
-.service-card-content ul {
-    display: none;
-    padding-left: 20px;
-    color: #333;
-    line-height: 1.6;
+.service-card p {
+    padding: 0 15px 20px;
+    color: #555;
+    font-size: 15px;
 }
 
-.service-card-content ul li {
-    margin-bottom: 8px;
-}
-
-/* ================= FOOTER ================= */
-footer {
-    background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 50px;
-}
-
-/* ================= BUTTONS ================= */
-button, .hero .btn, .gallery-card .btn-small, .service-btns button {
-    border: none;
-    cursor: pointer;
-    border-radius: 8px;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.service-btns button, .gallery-card .btn-small {
-    background: linear-gradient(135deg, #e67e22, #f39c12);
-    color: white;
-}
-
-.service-btns button:hover, .gallery-card .btn-small:hover {
-    background: linear-gradient(135deg, #f39c12, #e67e22);
-    transform: translateY(-2px);
-}
-
-/* ================= ABOUT SECTION ================= */
-.about-section {
-    max-width: 1000px;
-    margin: 50px auto;
-    background: white;
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-}
-
-.about-btn {
-    background: linear-gradient(135deg, #e67e22, #f39c12);
-    color: white;
-    padding: 12px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    margin-bottom: 20px;
-}
-
-.about-btn:hover {
-    transform: translateY(-2px);
-}
-
-.about-sub button {
-    background: #3498db;
-    color: white;
-    padding: 10px 14px;
-    margin-right: 10px;
-}
-
-.about-sub button:hover {
-    background: #2980b9;
-}
-
-/* ================= MOBILE RESPONSIVE ================= */
-@media (max-width: 1024px) {
-    .services-container {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    }
-}
-
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero p {
-        font-size: 20px;
-    }
-
-    .navbar {
-        justify-content: center;
-    }
-
-    .about-sub button {
-        margin-bottom: 10px;
+/* MOBILE */
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 26px;
     }
 }
