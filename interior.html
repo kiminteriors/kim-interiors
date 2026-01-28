@@ -1,62 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Interior Design Services | KIM Interiors</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KIM CONSTRUCTION & INTERIOR DESIGNS COMPANY | Interior Designs</title>
+
+<style>
+/* ================= GLOBAL ================= */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ================= NAVIGATION ================= */
+.navbar {
+    display: flex;
+    justify-content: flex-start;
+    gap: 25px;
+    background: #2c3e50;
+    padding: 15px 30px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a.active {
+    border-bottom: 2px solid #e67e22;
+}
+
+/* ================= HERO ================= */
+.hero {
+    background: url("images/interior-hero.jpg") center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.hero h1 {
+    font-family: 'Algeria', serif;
+    font-size: 48px;
+    margin: 10px 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+.hero p {
+    font-family: 'Lucida Handwriting', cursive;
+    font-size: 28px;
+    margin-top: 10px;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+/* ================= SERVICES ================= */
+.services-container {
+    max-width: 1000px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.service-card img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.service-card-content {
+    flex: 1;
+}
+
+.service-card-content h3 {
+    margin: 0;
+    color: #2c3e50;
+    font-size: 20px;
+}
+
+/* 🔥 IMPORTANT FIX */
+.service-card-content ul {
+    display: block; /* ALWAYS VISIBLE */
+    margin-top: 10px;
+    padding-left: 20px;
+    color: #333;
+    line-height: 1.6;
+}
+
+.service-card-content ul li {
+    margin-bottom: 8px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    background: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 800px) {
+    .services-container {
+        width: 90%;
+        margin: 30px auto;
+    }
+
+    .service-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .service-card img {
+        margin-bottom: 10px;
+    }
+
+    .service-card-content ul {
+        padding-left: 0;
+        list-style-position: inside;
+    }
+}
+</style>
 </head>
+
 <body>
 
-<header>
-    <h1>Interior Design Services</h1>
-    <p>We transform spaces with modern and elegant interior solutions</p>
-</header>
+<!-- NAVBAR -->
+<div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="services.html" class="active">Services</a>
+    <a href="contact.html">Contact</a>
+</div>
 
-<section class="services-grid">
-
-    <div class="service-card">
-        <img src="images/interior.jpg" alt="Interior Design">
-        <h3>Interior Design</h3>
-        <p>Modern and elegant interior concepts for homes and offices.</p>
-    </div>
-
-    <div class="service-card">
-        <img src="images/gypsum.jpg" alt="Gypsum Ceiling">
-        <h3>Gypsum Ceiling</h3>
-        <p>Stylish gypsum ceiling designs with perfect finishing.</p>
-    </div>
-
-    <div class="service-card">
-        <img src="images/lighting.jpg" alt="Lighting">
-        <h3>Lighting Design</h3>
-        <p>Decorative and functional lighting solutions.</p>
-    </div>
-
-    <div class="service-card">
-        <img src="images/flooring.jpg" alt="Flooring">
-        <h3>Flooring</h3>
-        <p>Quality tiles, wooden and laminated flooring.</p>
-    </div>
-
-    <div class="service-card">
-        <img src="images/wardrobes.jpg" alt="Wardrobes">
-        <h3>Wardrobes</h3>
-        <p>Custom wardrobes with modern finishing.</p>
-    </div>
-
-    <div class="service-card">
-        <img src="images/kitchen.jpg" alt="Kitchen Cabinets">
-        <h3>Kitchen Cabinets</h3>
-        <p>Elegant kitchen cabinets designed to last.</p>
-    </div>
-
-    <div class="service-card">
-        <img src="images/painting.jpg" alt="Painting">
-        <h3>Painting & Finishes</h3>
-        <p>Professional painting and decorative finishes.</p>
-    </div>
-
+<!-- HERO -->
+<section class="hero">
+    <h1>Interior Designs</h1>
+    <p>Creating Spaces That Inspire</p>
 </section>
+
+<!-- SERVICES -->
+<div class="services-container">
+
+    <div class="service-card">
+        <img src="images/walls-ceiling.jpg" alt="Walls and Ceiling Works">
+        <div class="service-card-content">
+            <h3>1. Walls & Ceiling Works</h3>
+            <ul>
+                <li>Wall skimming for smooth and flawless finishes</li>
+                <li>Gypsum, POP & modern ceiling designs</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <img src="images/floor-design.jpg" alt="Floor Designs">
+        <div class="service-card-content">
+            <h3>2. Floor Designs</h3>
+            <ul>
+                <li>Tiles floors</li>
+                <li>Wood-tiled floors</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <img src="images/cabinets-lighting.jpg" alt="Cabinets and Lighting">
+        <div class="service-card-content">
+            <h3>3. Cabinets & Lightings</h3>
+            <ul>
+                <li>Wardrobes</li>
+                <li>Kitchen cabinets</li>
+                <li>Ambient, task & decorative lighting</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <img src="images/fittings.jpg" alt="Fitting Works">
+        <div class="service-card-content">
+            <h3>4. Fitting Work Designs</h3>
+            <ul>
+                <li>Ceramic fittings</li>
+                <li>Taps & sanitary fittings</li>
+                <li>Curtains and blinds</li>
+                <li>Aluminium works</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <img src="images/cleaning-handover.jpg" alt="Cleaning and Handover">
+        <div class="service-card-content">
+            <h3>5. Cleaning & Hand Over</h3>
+            <ul>
+                <li>Thorough post-construction interior cleaning</li>
+                <li>Final inspection & professional client handover</li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+    &copy; 2026 KIM CONSTRUCTION & INTERIOR DESIGNS COMPANY. All Rights Reserved.
+</footer>
 
 </body>
 </html>
