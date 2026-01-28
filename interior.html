@@ -3,69 +3,57 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KIM CONSTRUCTION & INTERIOR DESIGNS COMPANY | Interior Designs</title>
+<title>KIM Interiors | Interior Designs</title>
 
 <style>
-/* ================= GLOBAL RESET ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial; }
+body { background: #f4f4f4; }
 
-body {
-    background: #f4f4f4;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* ================= NAVIGATION ================= */
+/* NAVBAR CSS – SAME AS ABOVE */
 .navbar {
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
     gap: 25px;
     background: #2c3e50;
     padding: 15px 30px;
 }
+.navbar a { color: white; text-decoration: none; font-weight: bold; }
+.navbar a:hover { color: #e67e22; }
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+.dropdown { position: relative; }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: #D6F0FA;
+    min-width: 180px;
+    border-radius: 6px;
 }
-
-.navbar a.active {
-    border-bottom: 2px solid #e67e22;
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    color: #2c3e50;
 }
+.dropdown-content a:hover { background: #e67e22; color: white; }
+.dropdown:hover .dropdown-content { display: block; }
 
-/* ================= HERO ================= */
+/* HERO */
 .hero {
     background: url("images/interior-hero.jpg") center/cover no-repeat;
-    color: white;
-    text-align: center;
     padding: 100px 20px;
+    text-align: center;
+    color: white;
 }
-
 .hero h1 {
-    font-family: 'Algeria', serif;
+    font-family: Algeria;
     font-size: 48px;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+    text-shadow: 2px 2px 6px #000;
 }
-
 .hero p {
-    font-family: 'Lucida Handwriting', cursive;
+    font-family: "Lucida Handwriting";
     font-size: 26px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
 
-/* ================= SERVICES GRID (LIKE CONSTRUCTION PAGE) ================= */
+/* GRID */
 .services-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -78,16 +66,8 @@ img {
 .service-card {
     background: white;
     border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    box-shadow: 0 8px 20px rgba(0,0,0,.12);
 }
 
 .service-card img {
@@ -95,55 +75,23 @@ img {
     height: 180px;
     object-fit: cover;
     border-radius: 10px;
-    margin-bottom: 15px;
 }
 
-.service-card-content h3 {
+.service-card h3 {
+    margin: 15px 0 10px;
     color: #2c3e50;
-    font-size: 20px;
-    margin-bottom: 10px;
     text-align: center;
 }
 
-/* ALWAYS SHOW SUB-SERVICES */
-.service-card-content ul {
-    display: block;
+.service-card ul {
     padding-left: 20px;
-    color: #333;
-    line-height: 1.6;
 }
 
-.service-card-content ul li {
-    margin-bottom: 8px;
-}
-
-/* ================= FOOTER ================= */
 footer {
     background: #2c3e50;
     color: white;
     text-align: center;
     padding: 25px;
-    margin-top: 50px;
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero p {
-        font-size: 20px;
-    }
-
-    .navbar {
-        justify-content: center;
-    }
-
-    .service-card-content ul {
-        padding-left: 0;
-        list-style-position: inside;
-    }
 }
 </style>
 </head>
@@ -153,7 +101,13 @@ footer {
 <!-- NAVBAR -->
 <div class="navbar">
     <a href="index.html">Home</a>
-    <a href="services.html" class="active">Services</a>
+    <div class="dropdown">
+        <a href="#">Services ▾</a>
+        <div class="dropdown-content">
+            <a href="interior-designs.html">Interior Designs</a>
+            <a href="constructions.html">Constructions</a>
+        </div>
+    </div>
     <a href="contact.html">Contact</a>
 </div>
 
@@ -163,72 +117,41 @@ footer {
     <p>Creating Spaces That Inspire</p>
 </section>
 
-<!-- INTERIOR SERVICES -->
+<!-- SERVICES -->
 <div class="services-container">
 
     <div class="service-card">
-        <img src="images/walls-ceiling.jpg" alt="Walls and Ceiling Works">
-        <div class="service-card-content">
-            <h3>1. Walls & Ceiling Works</h3>
-            <ul>
-                <li>Wall skimming for smooth finishes</li>
-                <li>Gypsum, POP & modern ceiling designs</li>
-            </ul>
-        </div>
+        <img src="images/walls-ceiling.jpg">
+        <h3>Walls & Ceiling Works</h3>
+        <ul>
+            <li>Wall skimming</li>
+            <li>Gypsum & POP ceilings</li>
+        </ul>
     </div>
 
     <div class="service-card">
-        <img src="images/floor-design.jpg" alt="Floor Designs">
-        <div class="service-card-content">
-            <h3>2. Floor Designs</h3>
-            <ul>
-                <li>Tiles floors</li>
-                <li>Wood-tiled floors</li>
-            </ul>
-        </div>
+        <img src="images/floor-design.jpg">
+        <h3>Floor Designs</h3>
+        <ul>
+            <li>Tiles floors</li>
+            <li>Wood-tiled floors</li>
+        </ul>
     </div>
 
     <div class="service-card">
-        <img src="images/cabinets-lighting.jpg" alt="Cabinets and Lighting">
-        <div class="service-card-content">
-            <h3>3. Cabinets & Lightings</h3>
-            <ul>
-                <li>Wardrobes</li>
-                <li>Kitchen cabinets</li>
-                <li>Decorative & task lighting</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="service-card">
-        <img src="images/fittings.jpg" alt="Fitting Works">
-        <div class="service-card-content">
-            <h3>4. Fitting Work Designs</h3>
-            <ul>
-                <li>Ceramic fittings</li>
-                <li>Taps & sanitary fittings</li>
-                <li>Curtains and blinds</li>
-                <li>Aluminium works</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="service-card">
-        <img src="images/cleaning-handover.jpg" alt="Cleaning and Handover">
-        <div class="service-card-content">
-            <h3>5. Cleaning & Hand Over</h3>
-            <ul>
-                <li>Post-completion interior cleaning</li>
-                <li>Final inspection & client handover</li>
-            </ul>
-        </div>
+        <img src="images/cabinets-lighting.jpg">
+        <h3>Cabinets & Lighting</h3>
+        <ul>
+            <li>Wardrobes</li>
+            <li>Kitchen cabinets</li>
+            <li>Lighting designs</li>
+        </ul>
     </div>
 
 </div>
 
-<!-- FOOTER -->
 <footer>
-    &copy; 2026 KIM CONSTRUCTION & INTERIOR DESIGNS COMPANY. All Rights Reserved.
+    © 2026 KIM INTERIORS AND CONSTRUCTION COMPANY
 </footer>
 
 </body>
