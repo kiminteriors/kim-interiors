@@ -63,11 +63,13 @@ img {
 
 /* ================= SERVICES ================= */
 .services-container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 50px auto;
     display: flex;
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row; /* Arrange horizontally */
+    flex-wrap: wrap;     /* Wrap to next line if needed */
+    gap: 20px;           /* Space between cards */
+    justify-content: flex-start;
 }
 
 .service-card {
@@ -78,6 +80,8 @@ img {
     display: flex;
     gap: 15px;
     align-items: flex-start;
+    flex: 1 1 calc(33% - 20px); /* 3 cards per row */
+    min-width: 280px;            /* Prevent too small */
 }
 
 .service-card img {
