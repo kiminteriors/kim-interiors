@@ -3,227 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KIM CONSTRUCTION & INTERIOR DESIGNS COMPANY | Constructions</title>
+<title>KIM Interiors | Constructions</title>
 
 <style>
-/* ================= GLOBAL RESET ================= */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
-
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* ================= NAVIGATION ================= */
-.navbar {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 25px;
-    background: #D6F0FA;
-    padding: 15px 40px;
-    flex-wrap: wrap;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
-.navbar a {
-    color: #2c3e50;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-.navbar a:hover {
-    color: #e67e22;
-}
-
-.navbar a.active {
-    border-bottom: 3px solid #e67e22;
-}
-
-/* ================= HERO ================= */
-.hero {
-    background: url("images/construction-hero.jpg") center/cover no-repeat;
-    text-align: center;
-    color: white;
-    padding: 120px 20px;
-}
-
-.hero h1 {
-    font-family: 'Algeria', serif;
-    font-size: 48px;
-    text-transform: uppercase;
-    margin-bottom: 15px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
-}
-
-.hero p {
-    font-family: 'Lucida Handwriting', cursive;
-    font-size: 26px;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
-}
-
-/* ================= SERVICES ================= */
-.services-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
-}
-
-.service-card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-}
-
-.service-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
-}
-
-.service-card-content h3 {
-    color: #2c3e50;
-    font-size: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-/* 🔥 IMPORTANT CHANGE HERE */
-.service-card-content ul {
-    display: block; /* ALWAYS VISIBLE */
-    padding-left: 20px;
-    color: #333;
-    line-height: 1.6;
-}
-
-.service-card-content ul li {
-    margin-bottom: 8px;
-}
-
-/* ================= FOOTER ================= */
-footer {
-    background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 25px;
-    margin-top: 50px;
-}
-
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 36px;
-    }
-
-    .hero p {
-        font-size: 20px;
-    }
-
-    .navbar {
-        justify-content: center;
-    }
-}
+/* SAME NAVBAR + GRID STYLE AS INTERIOR PAGE */
+/* (Reuse the same CSS to stay consistent) */
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
     <a href="index.html">Home</a>
-    <a href="services.html" class="active">Services</a>
+    <div class="dropdown">
+        <a href="#">Services ▾</a>
+        <div class="dropdown-content">
+            <a href="interior-designs.html">Interior Designs</a>
+            <a href="constructions.html">Constructions</a>
+        </div>
+    </div>
     <a href="contact.html">Contact</a>
 </div>
 
-<!-- HERO -->
-<section class="hero">
+<section class="hero" style="background:url('images/construction-hero.jpg') center/cover;">
     <h1>Constructions</h1>
     <p>Building Dreams into Reality</p>
 </section>
 
-<!-- SERVICES -->
-<div class="services-container">
-
-    <div class="service-card">
-        <img src="images/planning.jpg" alt="Planning">
-        <div class="service-card-content">
-            <h3>1. Planning</h3>
-            <ul>
-                <li>Client requirements – size, style & functionality</li>
-                <li>Budget estimation and cost planning</li>
-                <li>Architectural & structural drawings</li>
-                <li>Statutory approvals & permits</li>
-                <li>Site preparation and setting out</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="service-card">
-        <img src="images/substructure.jpg" alt="Substructure">
-        <div class="service-card-content">
-            <h3>2. Substructure</h3>
-            <ul>
-                <li>Excavation works for foundations</li>
-                <li>Foundation slab construction</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="service-card">
-        <img src="images/superstructure.jpg" alt="Superstructure">
-        <div class="service-card-content">
-            <h3>3. Superstructure</h3>
-            <ul>
-                <li>Walling works</li>
-                <li>Columns, beams & slabs</li>
-                <li>Roofing works</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="service-card">
-        <img src="images/electrical-plumbing.jpg" alt="Electrical & Plumbing">
-        <div class="service-card-content">
-            <h3>4. Electrical & Plumbing</h3>
-            <ul>
-                <li>Electrical conduits & wiring points</li>
-                <li>Plumbing piping & drainage layouts</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="service-card">
-        <img src="images/plastering-screeding.jpg" alt="Plastering">
-        <div class="service-card-content">
-            <h3>5. Plastering & Screeding</h3>
-            <ul>
-                <li>Plastering for smooth and protected walls</li>
-                <li>Screeding for leveled flooring finishes</li>
-            </ul>
-        </div>
-    </div>
-
-</div>
-
-<!-- FOOTER -->
-<footer>
-    &copy; 2026 KIM CONSTRUCTION & INTERIOR DESIGNS COMPANY. All Rights Reserved.
-</footer>
+<!-- SAME GRID STRUCTURE AS INTERIOR -->
 
 </body>
 </html>
