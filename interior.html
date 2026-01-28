@@ -1,158 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KIM Interiors | Interior Designs</title>
-
-<style>
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial; }
-body { background: #f4f4f4; }
-
-/* NAVBAR CSS – SAME AS ABOVE */
-.navbar {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-    background: #2c3e50;
-    padding: 15px 30px;
-}
-.navbar a { color: white; text-decoration: none; font-weight: bold; }
-.navbar a:hover { color: #e67e22; }
-
-.dropdown { position: relative; }
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: #D6F0FA;
-    min-width: 180px;
-    border-radius: 6px;
-}
-.dropdown-content a {
-    display: block;
-    padding: 12px 16px;
-    color: #2c3e50;
-}
-.dropdown-content a:hover { background: #e67e22; color: white; }
-.dropdown:hover .dropdown-content { display: block; }
-
-/* HERO */
-.hero {
-    background: url("images/interior-hero.jpg") center/cover no-repeat;
-    padding: 100px 20px;
-    text-align: center;
-    color: white;
-}
-.hero h1 {
-    font-family: Algeria;
-    font-size: 48px;
-    text-shadow: 2px 2px 6px #000;
-}
-.hero p {
-    font-family: "Lucida Handwriting";
-    font-size: 26px;
-}
-
-/* GRID */
-.services-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-    max-width: 1200px;
-    margin: 50px auto;
-    padding: 0 20px;
-}
-
-.service-card {
-    background: white;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 8px 20px rgba(0,0,0,.12);
-}
-
-.service-card img {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.service-card h3 {
-    margin: 15px 0 10px;
-    color: #2c3e50;
-    text-align: center;
-}
-
-.service-card ul {
-    padding-left: 20px;
-}
-
-footer {
-    background: #2c3e50;
-    color: white;
-    text-align: center;
-    padding: 25px;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Interior Design Services | KIM Interiors</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- NAVBAR -->
-<div class="navbar">
-    <a href="index.html">Home</a>
-    <div class="dropdown">
-        <a href="#">Services ▾</a>
-        <div class="dropdown-content">
-            <a href="interior-designs.html">Interior Designs</a>
-            <a href="constructions.html">Constructions</a>
-        </div>
-    </div>
-    <a href="contact.html">Contact</a>
-</div>
+<header>
+    <h1>Interior Design Services</h1>
+    <p>We transform spaces with modern and elegant interior solutions</p>
+</header>
 
-<!-- HERO -->
-<section class="hero">
-    <h1>Interior Designs</h1>
-    <p>Creating Spaces That Inspire</p>
+<section class="services-grid">
+
+    <div class="service-card">
+        <img src="images/interior.jpg" alt="Interior Design">
+        <h3>Interior Design</h3>
+        <p>Modern and elegant interior concepts for homes and offices.</p>
+    </div>
+
+    <div class="service-card">
+        <img src="images/gypsum.jpg" alt="Gypsum Ceiling">
+        <h3>Gypsum Ceiling</h3>
+        <p>Stylish gypsum ceiling designs with perfect finishing.</p>
+    </div>
+
+    <div class="service-card">
+        <img src="images/lighting.jpg" alt="Lighting">
+        <h3>Lighting Design</h3>
+        <p>Decorative and functional lighting solutions.</p>
+    </div>
+
+    <div class="service-card">
+        <img src="images/flooring.jpg" alt="Flooring">
+        <h3>Flooring</h3>
+        <p>Quality tiles, wooden and laminated flooring.</p>
+    </div>
+
+    <div class="service-card">
+        <img src="images/wardrobes.jpg" alt="Wardrobes">
+        <h3>Wardrobes</h3>
+        <p>Custom wardrobes with modern finishing.</p>
+    </div>
+
+    <div class="service-card">
+        <img src="images/kitchen.jpg" alt="Kitchen Cabinets">
+        <h3>Kitchen Cabinets</h3>
+        <p>Elegant kitchen cabinets designed to last.</p>
+    </div>
+
+    <div class="service-card">
+        <img src="images/painting.jpg" alt="Painting">
+        <h3>Painting & Finishes</h3>
+        <p>Professional painting and decorative finishes.</p>
+    </div>
+
 </section>
-
-<!-- SERVICES -->
-<div class="services-container">
-
-    <div class="service-card">
-        <img src="images/walls-ceiling.jpg">
-        <h3>Walls & Ceiling Works</h3>
-        <ul>
-            <li>Wall skimming</li>
-            <li>Gypsum & POP ceilings</li>
-        </ul>
-    </div>
-
-    <div class="service-card">
-        <img src="images/floor-design.jpg">
-        <h3>Floor Designs</h3>
-        <ul>
-            <li>Tiles floors</li>
-            <li>Wood-tiled floors</li>
-        </ul>
-    </div>
-
-    <div class="service-card">
-        <img src="images/cabinets-lighting.jpg">
-        <h3>Cabinets & Lighting</h3>
-        <ul>
-            <li>Wardrobes</li>
-            <li>Kitchen cabinets</li>
-            <li>Lighting designs</li>
-        </ul>
-    </div>
-
-</div>
-
-<footer>
-    © 2026 KIM INTERIORS AND CONSTRUCTION COMPANY
-</footer>
 
 </body>
 </html>
