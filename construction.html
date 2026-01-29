@@ -54,15 +54,14 @@ body {
     text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
 
-/* ================= SERVICES CONTAINER (FIXED) ================= */
+/* ================= SERVICES CONTAINER ================= */
 .services-container {
     max-width: 1200px;
     margin: 50px auto;
     display: flex;
-    flex-direction: row;      /* ✅ LEFT TO RIGHT */
-    flex-wrap: wrap;          /* ✅ Move to next row if needed */
+    flex-direction: row;
+    flex-wrap: wrap;
     gap: 20px;
-    justify-content: flex-start;
 }
 
 /* ================= SERVICE CARD ================= */
@@ -74,7 +73,7 @@ body {
     display: flex;
     gap: 15px;
     align-items: flex-start;
-    width: calc(33.333% - 20px); /* ✅ 3 per row */
+    width: calc(33.333% - 20px);
     box-sizing: border-box;
 }
 
@@ -87,15 +86,14 @@ body {
 
 .service-card-content h3 {
     margin: 0;
-    cursor: pointer;
     color: #2c3e50;
 }
 
-/* hidden by default */
+/* ✅ SUB-DEPARTMENTS ALWAYS VISIBLE */
 .service-card-content ul {
-    display: none;
+    display: block;
     margin-top: 10px;
-    padding-left: 20px;
+    padding-left: 18px;
     color: #333;
     line-height: 1.6;
 }
@@ -113,16 +111,16 @@ footer {
     margin-top: 50px;
 }
 
-/* ================= MOBILE ================= */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 900px) {
     .service-card {
-        width: calc(50% - 20px); /* 2 per row */
+        width: calc(50% - 20px);
     }
 }
 
 @media (max-width: 600px) {
     .service-card {
-        width: 100%; /* 1 per row */
+        width: 100%;
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -130,6 +128,11 @@ footer {
 
     .service-card img {
         margin-bottom: 10px;
+    }
+
+    .service-card-content ul {
+        padding-left: 0;
+        list-style-position: inside;
     }
 }
 </style>
@@ -156,11 +159,12 @@ footer {
     <div class="service-card">
         <img src="images/planning.jpg" alt="Planning">
         <div class="service-card-content">
-            <h3 onclick="toggleSub(this)">1. Planning</h3>
+            <h3>1. Planning</h3>
             <ul>
                 <li>Client requirements & budgeting</li>
                 <li>Architectural & structural drawings</li>
                 <li>Statutory approvals</li>
+                <li>Site preparation & setting out</li>
             </ul>
         </div>
     </div>
@@ -168,7 +172,7 @@ footer {
     <div class="service-card">
         <img src="images/substructure.jpg" alt="Substructure">
         <div class="service-card-content">
-            <h3 onclick="toggleSub(this)">2. Substructure</h3>
+            <h3>2. Substructure</h3>
             <ul>
                 <li>Excavation works</li>
                 <li>Foundation slab construction</li>
@@ -179,10 +183,11 @@ footer {
     <div class="service-card">
         <img src="images/superstructure.jpg" alt="Superstructure">
         <div class="service-card-content">
-            <h3 onclick="toggleSub(this)">3. Superstructure</h3>
+            <h3>3. Superstructure</h3>
             <ul>
                 <li>Walling works</li>
-                <li>Columns, beams & roofing</li>
+                <li>Columns, beams & slabs</li>
+                <li>Roofing works</li>
             </ul>
         </div>
     </div>
@@ -190,9 +195,9 @@ footer {
     <div class="service-card">
         <img src="images/electrical-plumbing.jpg" alt="Electrical & Plumbing">
         <div class="service-card-content">
-            <h3 onclick="toggleSub(this)">4. Electrical & Plumbing</h3>
+            <h3>4. Electrical & Plumbing</h3>
             <ul>
-                <li>Electrical wiring provisions</li>
+                <li>Electrical conduits & wiring</li>
                 <li>Water & drainage piping</li>
             </ul>
         </div>
@@ -201,7 +206,7 @@ footer {
     <div class="service-card">
         <img src="images/plastering-screeding.jpg" alt="Plastering">
         <div class="service-card-content">
-            <h3 onclick="toggleSub(this)">5. Plastering & Screeding</h3>
+            <h3>5. Plastering & Screeding</h3>
             <ul>
                 <li>Wall plastering</li>
                 <li>Floor screeding</li>
@@ -214,13 +219,6 @@ footer {
 <footer>
     &copy; 2026 KIM CONSTRUCTION & INTERIOR DESIGNS COMPANY. All Rights Reserved.
 </footer>
-
-<script>
-function toggleSub(element) {
-    const ul = element.nextElementSibling;
-    ul.style.display = ul.style.display === "block" ? "none" : "block";
-}
-</script>
 
 </body>
 </html>
