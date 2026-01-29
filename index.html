@@ -23,14 +23,12 @@ body {
     gap: 25px;
     background: #2c3e50;
     padding: 15px 30px;
-    position: relative;
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
     font-weight: bold;
-    cursor: pointer;
 }
 
 .navbar a.active {
@@ -40,26 +38,20 @@ body {
 /* Dropdown */
 .dropdown {
     position: relative;
-    display: inline-block;
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    left: 0;
-    top: 100%;
     background-color: #2c3e50;
     min-width: 180px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.3);
-    z-index: 10;
     border-radius: 6px;
     flex-direction: column;
 }
 
 .dropdown-content a {
-    color: white;
     padding: 12px 16px;
-    display: block;
+    color: white;
 }
 
 .dropdown-content a:hover {
@@ -81,71 +73,65 @@ body {
 
 .hero img.logo {
     height: 180px;
-    margin-bottom: 15px;
 }
 
 .hero h1 {
     font-family: 'Algeria', serif;
     font-size: 48px;
-    margin: 10px 0;
     text-transform: uppercase;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
 
-/* 🔥 UPDATED SLOGAN FONT */
 .hero p {
     font-family: 'Cinzel', serif;
     font-size: 30px;
     letter-spacing: 3px;
-    margin-top: 10px;
     text-transform: uppercase;
-    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
 
-/* ABOUT SECTION */
+/* CEO SECTION */
+.ceo-section {
+    max-width: 900px;
+    margin: 60px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.ceo-section img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #e67e22;
+}
+
+.ceo-info h2 {
+    margin: 0;
+    color: #2c3e50;
+}
+
+.ceo-info h4 {
+    margin: 8px 0;
+    color: #e67e22;
+}
+
+.ceo-info p {
+    margin-top: 10px;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* ABOUT */
 .about-section {
     max-width: 1000px;
     margin: 50px auto;
     background: white;
     padding: 30px;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.about-btn {
-    background: #e67e22;
-    color: white;
-    padding: 12px 18px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.about-sub {
-    display: none;
-    margin-top: 20px;
-    gap: 10px;
-}
-
-.about-sub button {
-    background: #3498db;
-    color: white;
-    border: none;
-    padding: 10px 14px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.about-content {
-    display: none;
-    margin-top: 25px;
-    line-height: 1.8;
-    color: #333;
-}
-
-.about-content h3 {
-    color: #2c3e50;
 }
 
 /* FOOTER */
@@ -154,21 +140,13 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
-    margin-top: 50px;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-    .navbar {
+    .ceo-section {
         flex-direction: column;
-        align-items: flex-start;
-    }
-    .hero h1 {
-        font-size: 32px;
-    }
-    .hero p {
-        font-size: 20px;
-        letter-spacing: 2px;
+        text-align: center;
     }
 }
 </style>
@@ -179,7 +157,6 @@ footer {
 <!-- NAVBAR -->
 <div class="navbar">
     <a href="index.html" class="active">Home</a>
-
     <div class="dropdown">
         <a>Services ▼</a>
         <div class="dropdown-content">
@@ -187,71 +164,42 @@ footer {
             <a href="interior.html">Interior Designs</a>
         </div>
     </div>
-
     <a href="contact.html">Contact</a>
 </div>
 
 <!-- HERO -->
 <section class="hero">
-    <img src="images/logo.jpg" alt="Kim Interiors Logo" class="logo">
+    <img src="images/logo.jpg" alt="Logo" class="logo">
     <h1>KIM INTERIORS & CONSTRUCTION</h1>
     <p>DETAILS DEFINE THE DIFFERENCE</p>
 </section>
 
+<!-- CEO SECTION -->
+<section class="ceo-section">
+    <img src="images/ceo.jpg" alt="CEO Photo">
+    <div class="ceo-info">
+        <h2>Albright Kimutai</h2>
+        <h4>CEO – Kim Interiors & Construction Company</h4>
+        <p>
+            Albright Kimutai is the founder and CEO of Kim Interiors & Construction Company,
+            bringing visionary leadership and a strong commitment to quality, innovation,
+            and excellence in interior design and construction services.
+        </p>
+    </div>
+</section>
+
 <!-- ABOUT -->
 <section class="about-section">
-    <button class="about-btn" onclick="toggleAbout()">About Us</button>
-
-    <div class="about-sub" id="aboutSub">
-        <button onclick="showAbout('who')">Who We Are</button>
-        <button onclick="showAbout('mission')">Mission & Vision</button>
-        <button onclick="showAbout('contacts')">Contacts</button>
-    </div>
-
-    <div class="about-content" id="who">
-        <h3>Home &gt; About Us</h3>
-        <p>
-            Kim Interiors & Construction is a professional interior design and construction company
-            dedicated to creating modern, stylish, and functional spaces.
-        </p>
-        <p>
-            We specialize in residential and commercial interior designs and constructions,
-            blending creativity with quality workmanship.
-        </p>
-    </div>
-
-    <div class="about-content" id="mission">
-        <p><strong>Mission:</strong> To transform spaces into inspiring environments.</p>
-        <p><strong>Vision:</strong> To be a leading interior design and construction brand in Kenya.</p>
-    </div>
-
-    <div class="about-content" id="contacts">
-        <p>
-            📍 Eldoret, UasinGishu, Rift Valley<br>
-            📧 kim.interiorke@gmail.com<br>
-            📞 +254 716 631 840
-        </p>
-    </div>
+    <p>
+        Kim Interiors & Construction is a professional interior design and construction company
+        dedicated to creating modern, stylish, and functional spaces.
+    </p>
 </section>
 
 <!-- FOOTER -->
 <footer>
     &copy; 2026 KIM INTERIORS & CONSTRUCTION. All Rights Reserved.
 </footer>
-
-<!-- SCRIPT -->
-<script>
-function toggleAbout() {
-    let sub = document.getElementById("aboutSub");
-    sub.style.display = sub.style.display === "flex" ? "none" : "flex";
-}
-
-function showAbout(id) {
-    document.querySelectorAll(".about-content")
-        .forEach(div => div.style.display = "none");
-    document.getElementById(id).style.display = "block";
-}
-</script>
 
 </body>
 </html>
