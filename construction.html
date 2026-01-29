@@ -12,7 +12,7 @@ body {
     background: #f4f4f4;
 }
 
-/* NAVIGATION */
+/* ================= NAVIGATION ================= */
 .navbar {
     display: flex;
     justify-content: flex-start;
@@ -31,7 +31,7 @@ body {
     border-bottom: 2px solid #e67e22;
 }
 
-/* HERO */
+/* ================= HERO ================= */
 .hero {
     background: url("images/construction-hero.jpg") center/cover no-repeat;
     color: white;
@@ -54,16 +54,18 @@ body {
     text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
 }
 
-/* SERVICES CONTAINER */
+/* ================= SERVICES CONTAINER (FIXED) ================= */
 .services-container {
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 50px auto;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;      /* ✅ LEFT TO RIGHT */
+    flex-wrap: wrap;          /* ✅ Move to next row if needed */
     gap: 20px;
+    justify-content: flex-start;
 }
 
-/* SERVICE CARD */
+/* ================= SERVICE CARD ================= */
 .service-card {
     background: #ffffff;
     border-radius: 10px;
@@ -72,17 +74,15 @@ body {
     display: flex;
     gap: 15px;
     align-items: flex-start;
+    width: calc(33.333% - 20px); /* ✅ 3 per row */
+    box-sizing: border-box;
 }
 
 .service-card img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 10px;
-}
-
-.service-card-content {
-    flex: 1;
 }
 
 .service-card-content h3 {
@@ -91,6 +91,7 @@ body {
     color: #2c3e50;
 }
 
+/* hidden by default */
 .service-card-content ul {
     display: none;
     margin-top: 10px;
@@ -103,7 +104,7 @@ body {
     margin-bottom: 8px;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer {
     background: #2c3e50;
     color: white;
@@ -112,14 +113,16 @@ footer {
     margin-top: 50px;
 }
 
-/* MOBILE */
-@media (max-width: 800px) {
-    .services-container {
-        width: 90%;
-        margin: 30px auto;
-    }
-
+/* ================= MOBILE ================= */
+@media (max-width: 900px) {
     .service-card {
+        width: calc(50% - 20px); /* 2 per row */
+    }
+}
+
+@media (max-width: 600px) {
+    .service-card {
+        width: 100%; /* 1 per row */
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -147,81 +150,71 @@ footer {
     <p>Building Dreams into Reality</p>
 </section>
 
-<!-- CONSTRUCTION SERVICES -->
+<!-- SERVICES -->
 <div class="services-container">
 
-    <!-- 1. Planning -->
     <div class="service-card">
         <img src="images/planning.jpg" alt="Planning">
         <div class="service-card-content">
             <h3 onclick="toggleSub(this)">1. Planning</h3>
             <ul>
-                <li>Client requirements – choice of size, style & functionality</li>
-                <li>Budget estimation and cost planning</li>
-                <li>Architectural & Structural drawings</li>
-                <li>Statutory approvals and permits</li>
-                <li>Site preparation and setting out</li>
+                <li>Client requirements & budgeting</li>
+                <li>Architectural & structural drawings</li>
+                <li>Statutory approvals</li>
             </ul>
         </div>
     </div>
 
-    <!-- 2. Substructure -->
     <div class="service-card">
         <img src="images/substructure.jpg" alt="Substructure">
         <div class="service-card-content">
             <h3 onclick="toggleSub(this)">2. Substructure</h3>
             <ul>
-                <li>Excavation works for foundations</li>
+                <li>Excavation works</li>
                 <li>Foundation slab construction</li>
             </ul>
         </div>
     </div>
 
-    <!-- 3. Superstructure -->
     <div class="service-card">
         <img src="images/superstructure.jpg" alt="Superstructure">
         <div class="service-card-content">
             <h3 onclick="toggleSub(this)">3. Superstructure</h3>
             <ul>
                 <li>Walling works</li>
-                <li>Structural elements (columns, beams & slabs)</li>
-                <li>Roofing works</li>
+                <li>Columns, beams & roofing</li>
             </ul>
         </div>
     </div>
 
-    <!-- 4. Electrical & Plumbing Provisions -->
     <div class="service-card">
         <img src="images/electrical-plumbing.jpg" alt="Electrical & Plumbing">
         <div class="service-card-content">
-            <h3 onclick="toggleSub(this)">4. Electrical & Plumbing Provisions</h3>
+            <h3 onclick="toggleSub(this)">4. Electrical & Plumbing</h3>
             <ul>
-                <li>Electrical provisions – conduits, wiring routes & points</li>
-                <li>Plumbing provisions – piping layouts for water & drainage</li>
+                <li>Electrical wiring provisions</li>
+                <li>Water & drainage piping</li>
             </ul>
         </div>
     </div>
 
-    <!-- 5. Plastering & Screeding -->
     <div class="service-card">
-        <img src="images/plastering-screeding.jpg" alt="Plastering & Screeding">
+        <img src="images/plastering-screeding.jpg" alt="Plastering">
         <div class="service-card-content">
             <h3 onclick="toggleSub(this)">5. Plastering & Screeding</h3>
             <ul>
-                <li>Plastering – smoothens wall surfaces, protects masonry, and prepares walls for painting or finishes.</li>
-                <li>Screeding – levels floor surfaces to achieve a smooth, even base ready for tiles, wood, or other finishes.</li>
+                <li>Wall plastering</li>
+                <li>Floor screeding</li>
             </ul>
         </div>
     </div>
 
 </div>
 
-<!-- FOOTER -->
 <footer>
     &copy; 2026 KIM CONSTRUCTION & INTERIOR DESIGNS COMPANY. All Rights Reserved.
 </footer>
 
-<!-- SCRIPT -->
 <script>
 function toggleSub(element) {
     const ul = element.nextElementSibling;
