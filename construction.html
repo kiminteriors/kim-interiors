@@ -9,13 +9,14 @@
 :root {
     --sky: #38bdf8;
     --white: #ffffff;
+    --black: #000000;
 }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: var(--white);
-    color: var(--sky);
+    color: var(--black);
 }
 
 /* ================= NAVIGATION ================= */
@@ -64,7 +65,6 @@ body {
     color: var(--sky);
 }
 
-/* Show dropdown */
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -82,7 +82,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(56, 189, 248,0.35); /* sky blue overlay for contrast */
+    background: rgba(56,189,248,0.35);
 }
 
 .hero * {
@@ -107,12 +107,13 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    padding: 0 20px;
 }
 
 .service-card {
     background: var(--white);
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(56, 189, 248,0.2);
+    box-shadow: 0 4px 12px rgba(56,189,248,0.2);
     padding: 20px;
     display: flex;
     gap: 15px;
@@ -126,16 +127,17 @@ body {
     border-radius: 10px;
 }
 
+/* ===== DEPARTMENT FONTS NOW BLACK ===== */
 .service-card-content h3 {
     margin: 0;
-    color: var(--sky);
+    color: var(--black);
 }
 
 .service-card-content ul {
     margin-top: 10px;
     padding-left: 18px;
     line-height: 1.6;
-    color: var(--sky);
+    color: var(--black);
 }
 
 .service-card-content ul li {
