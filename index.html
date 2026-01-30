@@ -86,6 +86,7 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .hero img.logo {
@@ -95,6 +96,7 @@ body {
 
 .hero-text {
     margin-left: 40px;
+    flex: 1;
 }
 
 .hero-text h1 {
@@ -117,16 +119,55 @@ body {
 /* ================= MAIN CONTENT ================= */
 .main-content {
     display: flex;
-    justify-content: flex-end; 
+    justify-content: space-between; 
     max-width: 1200px;
     margin: 60px auto;
     gap: 20px;
     padding: 0 20px;
+    flex-wrap: wrap;
 }
 
-/* ABOUT US (Right Side) */
+/* ================= CEO SECTION (Left Side) ================= */
+.ceo-section {
+    width: 48%;
+    background: var(--white);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.ceo-section img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--sky);
+    margin-bottom: 10px;
+}
+
+.ceo-info h2 {
+    margin: 0;
+    font-size: 18px; 
+    color: var(--black);
+}
+
+.ceo-info h4 {
+    margin: 5px 0;
+    font-size: 14px; 
+    color: var(--sky);
+}
+
+.ceo-info p {
+    margin-top: 8px;
+    line-height: 1.5;
+    color: var(--black);
+    font-size: 14px;  
+}
+
+/* ================= ABOUT US (Right Side) ================= */
 .about-section {
-    width: 50%;
+    width: 48%;
     background: var(--white);
     padding: 25px;
     border-radius: 12px;
@@ -149,7 +190,7 @@ body {
     display: none;
     margin-top: 20px;
     gap: 10px;
-    justify-content: center;
+    justify-content: flex-start; /* left-to-right alignment */
     flex-wrap: wrap;
 }
 
@@ -181,48 +222,6 @@ body {
     margin-bottom: 10px;
 }
 
-/* CEO SECTION (Floating Left) */
-.ceo-section {
-    position: fixed;
-    top: 360px;
-    left: 20px;
-    width: 200px;
-    background: var(--white);
-    padding: 12px; 
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-    text-align: center;
-    z-index: 10;
-}
-
-.ceo-section img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 3px solid var(--sky);
-    margin-bottom: 8px;
-}
-
-.ceo-info h2 {
-    margin: 0;
-    font-size: 16px; 
-    color: var(--black);
-}
-
-.ceo-info h4 {
-    margin: 5px 0;
-    font-size: 12px; 
-    color: var(--sky);
-}
-
-.ceo-info p {
-    margin-top: 6px;
-    line-height: 1.4;
-    color: var(--black);
-    font-size: 12px;  
-}
-
 /* ================= FOOTER ================= */
 footer {
     background: var(--sky);
@@ -239,13 +238,7 @@ footer {
         align-items: center;
     }
 
-    .about-section {
-        width: 100%;
-        margin-bottom: 40px;
-    }
-
-    .ceo-section {
-        position: static;
+    .about-section, .ceo-section {
         width: 100%;
         margin-bottom: 40px;
     }
@@ -271,7 +264,9 @@ footer {
     }
 
     .about-sub {
-        flex-direction: column;
+        flex-direction: row; /* maintain horizontal alignment of buttons */
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
 
     .hero-text {
@@ -317,18 +312,8 @@ footer {
         padding: 8px 12px;
     }
 
-    .about-content {
+    .about-content, .ceo-info p {
         font-size: 14px;
-    }
-
-    .ceo-section {
-        width: 100%;
-        position: static;
-        margin-top: 20px;
-    }
-
-    .ceo-info p {
-        font-size: 12px;
     }
 }
 </style>
@@ -363,7 +348,21 @@ footer {
 <!-- MAIN CONTENT -->
 <div class="main-content">
 
-    <!-- ABOUT US (Right Side) -->
+    <!-- CEO SECTION (Left) -->
+    <section class="ceo-section">
+        <img src="images/ceo.jpg" alt="CEO Photo">
+        <div class="ceo-info">
+            <h2>Albright Kimutai</h2>
+            <h4>CEO – Kim Interiors & Construction Company</h4>
+            <p>
+                Albright Kimutai is the founder and CEO of Kim Interiors & Construction Company,
+                providing visionary leadership with a strong commitment to quality craftsmanship,
+                innovation, and excellence in interior design and construction services.
+            </p>
+        </div>
+    </section>
+
+    <!-- ABOUT US (Right) -->
     <section class="about-section">
         <button class="about-btn" onclick="toggleAbout()">About Us</button>
 
@@ -402,20 +401,6 @@ footer {
     </section>
 
 </div>
-
-<!-- CEO SECTION -->
-<section class="ceo-section">
-    <img src="images/ceo.jpg" alt="CEO Photo">
-    <div class="ceo-info">
-        <h2>Albright Kimutai</h2>
-        <h4>CEO – Kim Interiors & Construction Company</h4>
-        <p>
-            Albright Kimutai is the founder and CEO of Kim Interiors & Construction Company,
-            providing visionary leadership with a strong commitment to quality craftsmanship,
-            innovation, and excellence in interior design and construction services.
-        </p>
-    </div>
-</section>
 
 <!-- FOOTER -->
 <footer>
