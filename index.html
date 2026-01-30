@@ -68,27 +68,37 @@ body {
 .hero {
     background: #ffffff; /* White background */
     color: #000; 
-    text-align: center;
-    padding: 80px 20px;
+    padding: 60px 20px;
 }
 
+/* Flex container for logo and text */
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+/* Logo on left */
 .hero img.logo {
-    height: 180px;
+    height: 120px;
     max-width: 100%;
-    margin-bottom: 15px;
 }
 
-.hero h1 {
+/* Text next to logo */
+.hero-text h1 {
     font-family: 'Algeria', serif;
-    font-size: 32px;
+    font-size: 28px;
     text-transform: uppercase;
     margin: 0 0 10px 0;
 }
 
-.hero p {
+.hero-text p {
     font-family: 'Cinzel', serif;
-    font-size: 20px;
-    letter-spacing: 2px;
+    font-size: 18px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     color: #0284c7;
     margin: 0;
@@ -162,7 +172,7 @@ body {
 /* ================= CEO SECTION FLOATING ================= */
 .ceo-section {
     position: fixed; /* Floating sidebar */
-    top: 150px;
+    top: 180px;
     right: 20px;
     width: 250px; /* Reduced size */
     background: #ffffff;
@@ -229,17 +239,22 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .hero img.logo {
-        height: 140px;
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
     }
 
-    .hero h1 {
+    .hero img.logo {
+        height: 100px;
+    }
+
+    .hero-text h1 {
         font-size: 24px;
     }
 
-    .hero p {
+    .hero-text p {
         font-size: 16px;
-        letter-spacing: 1px;
     }
 
     .about-sub {
@@ -266,9 +281,13 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-    <img src="images/logo.jpg" alt="Kim Interiors Logo" class="logo">
-    <h1>KIM INTERIORS & CONSTRUCTION</h1>
-    <p>DETAILS DEFINE THE DIFFERENCE</p>
+    <div class="hero-content">
+        <img src="images/logo.jpg" alt="Kim Interiors Logo" class="logo">
+        <div class="hero-text">
+            <h1>KIM INTERIORS & CONSTRUCTION</h1>
+            <p>DETAILS DEFINE THE DIFFERENCE</p>
+        </div>
+    </div>
 </section>
 
 <!-- MAIN CONTENT -->
