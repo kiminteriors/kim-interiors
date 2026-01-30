@@ -22,7 +22,6 @@ body {
 /* ================= NAVIGATION ================= */
 .navbar {
     display: flex;
-    justify-content: flex-start;
     align-items: center;
     gap: 25px;
     background: var(--sky);
@@ -49,7 +48,7 @@ body {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: var(--sky);
+    background: var(--sky);
     min-width: 200px;
     border-radius: 6px;
     box-shadow: 0 8px 16px rgba(0,0,0,0.25);
@@ -63,7 +62,7 @@ body {
 }
 
 .dropdown-content a:hover {
-    background-color: var(--black);
+    background: var(--black);
 }
 
 /* Show dropdown */
@@ -199,11 +198,12 @@ footer {
     <div class="service-card">
         <img src="images/planning.jpg">
         <div class="service-card-content">
-            <h3>Planning</h3>
+            <h3>1. Planning</h3>
             <ul>
                 <li>Client requirements & budgeting</li>
-                <li>Architectural drawings</li>
-                <li>Site preparation</li>
+                <li>Architectural & structural drawings</li>
+                <li>Statutory approvals</li>
+                <li>Site preparation & setting out</li>
             </ul>
         </div>
     </div>
@@ -211,10 +211,10 @@ footer {
     <div class="service-card">
         <img src="images/substructure.jpg">
         <div class="service-card-content">
-            <h3>Substructure</h3>
+            <h3>2. Substructure</h3>
             <ul>
                 <li>Excavation works</li>
-                <li>Foundation construction</li>
+                <li>Foundation slab construction</li>
             </ul>
         </div>
     </div>
@@ -222,10 +222,33 @@ footer {
     <div class="service-card">
         <img src="images/superstructure.jpg">
         <div class="service-card-content">
-            <h3>Superstructure</h3>
+            <h3>3. Superstructure</h3>
             <ul>
                 <li>Walling works</li>
+                <li>Columns, beams & slabs</li>
                 <li>Roofing works</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <img src="images/electrical-plumbing.jpg">
+        <div class="service-card-content">
+            <h3>4. Electrical & Plumbing</h3>
+            <ul>
+                <li>Electrical conduits & wiring</li>
+                <li>Water & drainage piping</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="service-card">
+        <img src="images/plastering-screeding.jpg">
+        <div class="service-card-content">
+            <h3>5. Plastering & Screeding</h3>
+            <ul>
+                <li>Wall plastering</li>
+                <li>Floor screeding</li>
             </ul>
         </div>
     </div>
