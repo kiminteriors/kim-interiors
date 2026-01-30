@@ -97,7 +97,7 @@ body {
 /* ================= MAIN CONTENT WRAPPER ================= */
 .main-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     max-width: 1200px;
     margin: 60px auto;
     gap: 20px;
@@ -106,7 +106,7 @@ body {
 
 /* ================= ABOUT US ================= */
 .about-section {
-    width: 45%; /* Left side column */
+    width: 50%; /* Left side column */
     background: #ffffff;
     padding: 25px;
     border-radius: 12px;
@@ -159,42 +159,46 @@ body {
     margin-bottom: 10px;
 }
 
-/* ================= CEO SECTION ================= */
+/* ================= CEO SECTION FLOATING ================= */
 .ceo-section {
-    width: 45%; /* Right side column */
+    position: fixed; /* Floating sidebar */
+    top: 150px;
+    right: 20px;
+    width: 250px; /* Reduced size */
     background: #ffffff;
-    padding: 20px;
+    padding: 15px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.12);
     text-align: center;
+    z-index: 10;
 }
 
 .ceo-section img {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     object-fit: cover;
     border-radius: 50%;
-    border: 4px solid #38bdf8;
+    border: 3px solid #38bdf8;
     margin-bottom: 10px;
 }
 
 .ceo-info h2 {
     margin: 0;
-    font-size: 20px;
+    font-size: 18px;
     color: #000;
 }
 
 .ceo-info h4 {
     margin: 5px 0;
-    font-size: 14px;
+    font-size: 13px;
     color: #0284c7;
 }
 
 .ceo-info p {
-    margin-top: 10px;
-    line-height: 1.5;
+    margin-top: 8px;
+    line-height: 1.4;
     color: #333;
-    font-size: 14px;  /* Smaller CEO description */
+    font-size: 13px;  /* Smaller CEO description */
 }
 
 /* ================= FOOTER ================= */
@@ -212,7 +216,13 @@ footer {
         flex-direction: column;
     }
 
-    .about-section, .ceo-section {
+    .about-section {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    .ceo-section {
+        position: static;
         width: 100%;
         margin-bottom: 40px;
     }
@@ -302,21 +312,21 @@ footer {
         </div>
     </section>
 
-    <!-- CEO SECTION (Right Side) -->
-    <section class="ceo-section">
-        <img src="images/ceo.jpg" alt="CEO Photo">
-        <div class="ceo-info">
-            <h2>Albright Kimutai</h2>
-            <h4>CEO – Kim Interiors & Construction Company</h4>
-            <p>
-                Albright Kimutai is the founder and CEO of Kim Interiors & Construction Company,
-                providing visionary leadership with a strong commitment to quality craftsmanship,
-                innovation, and excellence in interior design and construction services.
-            </p>
-        </div>
-    </section>
-
 </div>
+
+<!-- CEO SECTION (Floating Right) -->
+<section class="ceo-section">
+    <img src="images/ceo.jpg" alt="CEO Photo">
+    <div class="ceo-info">
+        <h2>Albright Kimutai</h2>
+        <h4>CEO – Kim Interiors & Construction Company</h4>
+        <p>
+            Albright Kimutai is the founder and CEO of Kim Interiors & Construction Company,
+            providing visionary leadership with a strong commitment to quality craftsmanship,
+            innovation, and excellence in interior design and construction services.
+        </p>
+    </div>
+</section>
 
 <!-- FOOTER -->
 <footer>
