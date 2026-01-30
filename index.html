@@ -66,8 +66,8 @@ body {
 
 /* ================= HERO ================= */
 .hero {
-    background: #ffffff;
-    color: #000;
+    background: #ffffff; /* White background */
+    color: #000; 
     text-align: center;
     padding: 80px 20px;
 }
@@ -94,54 +94,21 @@ body {
     margin: 0;
 }
 
-/* ================= CEO SECTION ================= */
-.ceo-section {
-    position: fixed;  /* Keep CEO section on the right */
-    top: 150px;       /* Adjust top distance from page */
-    right: 20px;      /* Distance from right edge */
-    width: 300px;     /* Fixed width */
-    background: #ffffff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-    text-align: center;
-    z-index: 5;
-}
-
-.ceo-section img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #38bdf8;
-    margin-bottom: 10px;
-}
-
-.ceo-info h2 {
-    margin: 0;
-    font-size: 20px;
-    color: #000;
-}
-
-.ceo-info h4 {
-    margin: 5px 0;
-    font-size: 14px;
-    color: #0284c7;
-}
-
-.ceo-info p {
-    margin-top: 10px;
-    line-height: 1.5;
-    color: #333;
-    font-size: 14px;  /* Smaller CEO description */
+/* ================= MAIN CONTENT WRAPPER ================= */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 60px auto;
+    gap: 20px;
+    padding: 0 20px;
 }
 
 /* ================= ABOUT US ================= */
 .about-section {
-    max-width: 900px;
-    margin: 60px auto;
+    width: 45%; /* Left side column */
     background: #ffffff;
-    padding: 35px;
+    padding: 25px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.12);
     text-align: center;
@@ -192,6 +159,44 @@ body {
     margin-bottom: 10px;
 }
 
+/* ================= CEO SECTION ================= */
+.ceo-section {
+    width: 45%; /* Right side column */
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    text-align: center;
+}
+
+.ceo-section img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid #38bdf8;
+    margin-bottom: 10px;
+}
+
+.ceo-info h2 {
+    margin: 0;
+    font-size: 20px;
+    color: #000;
+}
+
+.ceo-info h4 {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #0284c7;
+}
+
+.ceo-info p {
+    margin-top: 10px;
+    line-height: 1.5;
+    color: #333;
+    font-size: 14px;  /* Smaller CEO description */
+}
+
 /* ================= FOOTER ================= */
 footer {
     background: #000;
@@ -203,10 +208,13 @@ footer {
 
 /* ================= MOBILE ================= */
 @media (max-width: 1024px) {
-    .ceo-section {
-        position: static;
+    .main-content {
+        flex-direction: column;
+    }
+
+    .about-section, .ceo-section {
         width: 100%;
-        margin: 40px auto;
+        margin-bottom: 40px;
     }
 }
 
@@ -253,57 +261,62 @@ footer {
     <p>DETAILS DEFINE THE DIFFERENCE</p>
 </section>
 
-<!-- CEO SECTION -->
-<section class="ceo-section">
-    <img src="images/ceo.jpg" alt="CEO Photo">
-    <div class="ceo-info">
-        <h2>Albright Kimutai</h2>
-        <h4>CEO – Kim Interiors & Construction Company</h4>
-        <p>
-            Albright Kimutai is the founder and CEO of Kim Interiors & Construction Company,
-            providing visionary leadership with a strong commitment to quality craftsmanship,
-            innovation, and excellence in interior design and construction services.
-        </p>
-    </div>
-</section>
+<!-- MAIN CONTENT -->
+<div class="main-content">
 
-<!-- ABOUT US -->
-<section class="about-section">
-    <button class="about-btn" onclick="toggleAbout()">About Us</button>
+    <!-- ABOUT US (Left Side) -->
+    <section class="about-section">
+        <button class="about-btn" onclick="toggleAbout()">About Us</button>
 
-    <div class="about-sub" id="aboutSub">
-        <button onclick="showAbout('who')">Who We Are</button>
-        <button onclick="showAbout('mission')">Mission & Vision</button>
-        <button onclick="showAbout('contacts')">Contacts</button>
-    </div>
+        <div class="about-sub" id="aboutSub">
+            <button onclick="showAbout('who')">Who We Are</button>
+            <button onclick="showAbout('mission')">Mission & Vision</button>
+            <button onclick="showAbout('contacts')">Contacts</button>
+        </div>
 
-    <div class="about-content" id="who">
-        <h3>Who We Are</h3>
-        <p>
-            Kim Interiors & Construction is a professional interior design and construction company
-            dedicated to creating modern, stylish, and functional spaces.
-        </p>
-        <p>
-            We specialize in residential and commercial interior designs and constructions,
-            blending creativity with quality workmanship.
-        </p>
-    </div>
+        <div class="about-content" id="who">
+            <h3>Who We Are</h3>
+            <p>
+                Kim Interiors & Construction is a professional interior design and construction company
+                dedicated to creating modern, stylish, and functional spaces.
+            </p>
+            <p>
+                We specialize in residential and commercial interior designs and constructions,
+                blending creativity with quality workmanship.
+            </p>
+        </div>
 
-    <div class="about-content" id="mission">
-        <h3>Mission & Vision</h3>
-        <p><strong>Mission:</strong> To transform spaces into inspiring environments.</p>
-        <p><strong>Vision:</strong> To be a leading interior design and construction brand in Kenya.</p>
-    </div>
+        <div class="about-content" id="mission">
+            <h3>Mission & Vision</h3>
+            <p><strong>Mission:</strong> To transform spaces into inspiring environments.</p>
+            <p><strong>Vision:</strong> To be a leading interior design and construction brand in Kenya.</p>
+        </div>
 
-    <div class="about-content" id="contacts">
-        <h3>Contact Information</h3>
-        <p>
-            📍 Eldoret, Uasin Gishu, Rift Valley<br>
-            📧 kim.interiorke@gmail.com<br>
-            📞 +254 716 631 840
-        </p>
-    </div>
-</section>
+        <div class="about-content" id="contacts">
+            <h3>Contact Information</h3>
+            <p>
+                📍 Eldoret, Uasin Gishu, Rift Valley<br>
+                📧 kim.interiorke@gmail.com<br>
+                📞 +254 716 631 840
+            </p>
+        </div>
+    </section>
+
+    <!-- CEO SECTION (Right Side) -->
+    <section class="ceo-section">
+        <img src="images/ceo.jpg" alt="CEO Photo">
+        <div class="ceo-info">
+            <h2>Albright Kimutai</h2>
+            <h4>CEO – Kim Interiors & Construction Company</h4>
+            <p>
+                Albright Kimutai is the founder and CEO of Kim Interiors & Construction Company,
+                providing visionary leadership with a strong commitment to quality craftsmanship,
+                innovation, and excellence in interior design and construction services.
+            </p>
+        </div>
+    </section>
+
+</div>
 
 <!-- FOOTER -->
 <footer>
