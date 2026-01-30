@@ -10,7 +10,8 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f4f4f4;
+    background: #f8fafc; /* light background */
+    color: #000; /* black text by default */
 }
 
 img {
@@ -24,18 +25,18 @@ img {
     display: flex;
     align-items: center;
     gap: 25px;
-    background: #2c3e50;
+    background: #000; /* black navbar */
     padding: 15px 30px;
 }
 
 .navbar a {
-    color: white;
+    color: #38bdf8; /* sky blue links */
     text-decoration: none;
     font-weight: bold;
 }
 
 .navbar a.active {
-    border-bottom: 2px solid #e67e22;
+    border-bottom: 2px solid #38bdf8; /* active link underline */
 }
 
 /* Dropdown */
@@ -48,21 +49,21 @@ img {
     position: absolute;
     top: 100%;
     left: 0;
-    background: #2c3e50;
+    background: #000; /* black dropdown background */
     min-width: 200px;
     border-radius: 6px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
     z-index: 10;
 }
 
 .dropdown-content a {
     display: block;
     padding: 12px 16px;
-    color: white;
+    color: #38bdf8; /* sky blue text in dropdown */
 }
 
 .dropdown-content a:hover {
-    background: #e67e22;
+    background: #38bdf8; /* hover: sky blue */
+    color: #000; /* black text on hover */
 }
 
 /* Show dropdown */
@@ -73,7 +74,7 @@ img {
 /* ================= HERO ================= */
 .hero {
     background: url("images/interior-hero.jpg") center/cover no-repeat;
-    color: white;
+    color: #ffffff; /* white hero text */
     text-align: center;
     padding: 90px 20px;
 }
@@ -100,17 +101,19 @@ img {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+    justify-content: flex-start;
 }
 
 .service-card {
-    background: #fff;
+    background: #ffffff; /* white cards */
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
     padding: 20px;
     display: flex;
     gap: 15px;
     flex: 1 1 calc(33% - 20px);
     min-width: 280px;
+    color: #000; /* black text inside cards */
 }
 
 .service-card img {
@@ -122,7 +125,7 @@ img {
 
 .service-card-content h3 {
     margin: 0;
-    color: #2c3e50;
+    color: #38bdf8; /* sky blue heading */
     font-size: 20px;
 }
 
@@ -130,6 +133,7 @@ img {
     margin-top: 10px;
     padding-left: 20px;
     line-height: 1.6;
+    color: #000; /* black list text */
 }
 
 .service-card-content ul li {
@@ -138,8 +142,8 @@ img {
 
 /* ================= FOOTER ================= */
 footer {
-    background: #2c3e50;
-    color: white;
+    background: #000; /* black footer */
+    color: #38bdf8; /* sky blue text */
     text-align: center;
     padding: 20px;
     margin-top: 50px;
@@ -187,7 +191,7 @@ footer {
 <div class="services-container">
 
     <div class="service-card">
-        <img src="images/walls-ceiling.jpg">
+        <img src="images/walls-ceiling.jpg" alt="Walls and Ceiling Works">
         <div class="service-card-content">
             <h3>1. Walls & Ceiling Works</h3>
             <ul>
@@ -198,7 +202,7 @@ footer {
     </div>
 
     <div class="service-card">
-        <img src="images/floor-design.jpg">
+        <img src="images/floor-design.jpg" alt="Floor Designs">
         <div class="service-card-content">
             <h3>2. Floor Designs</h3>
             <ul>
@@ -209,7 +213,7 @@ footer {
     </div>
 
     <div class="service-card">
-        <img src="images/cabinets-lighting.jpg">
+        <img src="images/cabinets-lighting.jpg" alt="Cabinets and Lighting">
         <div class="service-card-content">
             <h3>3. Cabinets & Lightings</h3>
             <ul>
@@ -221,7 +225,7 @@ footer {
     </div>
 
     <div class="service-card">
-        <img src="images/fittings.jpg">
+        <img src="images/fittings.jpg" alt="Fitting Works">
         <div class="service-card-content">
             <h3>4. Fitting Work Designs</h3>
             <ul>
@@ -232,7 +236,7 @@ footer {
     </div>
 
     <div class="service-card">
-        <img src="images/cleaning-handover.jpg">
+        <img src="images/cleaning-handover.jpg" alt="Cleaning and Handover">
         <div class="service-card-content">
             <h3>5. Cleaning & Hand Over</h3>
             <ul>
