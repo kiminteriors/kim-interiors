@@ -90,7 +90,7 @@ body {
 
 /* Logo on left */
 .hero img.logo {
-    height: 240px; /* Double size */
+    height: 360px; /* Increased by 50% */
     max-width: 100%;
 }
 
@@ -128,11 +128,11 @@ body {
 
 /* ================= ABOUT US ================= */
 .about-section {
-    width: 50%;
+    width: 50%; /* Left side column */
     background: var(--white);
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(56,189,248,0.12);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
     text-align: center;
 }
 
@@ -156,7 +156,7 @@ body {
 
 .about-sub button {
     background: var(--sky);
-    color: var(--white);
+    color: var(--black);
     border: none;
     padding: 10px 14px;
     border-radius: 6px;
@@ -166,14 +166,14 @@ body {
 
 .about-sub button:hover {
     background-color: #0284c7;
+    color: var(--white);
 }
 
-/* About content sections */
 .about-content {
     display: none;
     margin-top: 25px;
     line-height: 1.8;
-    color: var(--black); /* Black text */
+    color: var(--black); /* About content black */
     text-align: left;
 }
 
@@ -184,14 +184,14 @@ body {
 
 /* ================= CEO SECTION FLOATING ================= */
 .ceo-section {
-    position: fixed;
-    top: 240px;
+    position: fixed; /* Floating sidebar */
+    top: 360px;
     right: 20px;
-    width: 250px;
+    width: 250px; /* Reduced size */
     background: var(--white);
     padding: 15px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(56,189,248,0.12);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
     text-align: center;
     z-index: 10;
 }
@@ -208,7 +208,7 @@ body {
 .ceo-info h2 {
     margin: 0;
     font-size: 18px;
-    color: var(--sky);
+    color: var(--black);
 }
 
 .ceo-info h4 {
@@ -233,7 +233,7 @@ footer {
     margin-top: 60px;
 }
 
-/* ================= MOBILE RESPONSIVE ================= */
+/* ================= MOBILE ================= */
 @media (max-width: 1024px) {
     .main-content {
         flex-direction: column;
@@ -259,7 +259,7 @@ footer {
     }
 
     .hero img.logo {
-        height: 120px;
+        height: 180px; /* half size for small screens */
     }
 
     .hero-text h1 {
