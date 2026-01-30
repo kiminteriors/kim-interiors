@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KIM INTERIORS & CONSTRUCTION | Home</title>
 
-<!-- GOOGLE FONT FOR SLOGAN -->
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
-
 <style>
 :root {
     --sky: #38bdf8;
@@ -20,10 +17,10 @@ body {
     font-family: Arial, sans-serif;
     background: var(--white);
     color: var(--black);
-    font-size: 14px; /* smaller base font */
+    font-size: 14px;
 }
 
-/* ================= NAVIGATION ================= */
+/* ================= NAVBAR ================= */
 .navbar {
     display: flex;
     align-items: center;
@@ -138,7 +135,6 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.12);
     text-align: center;
-    position: relative; /* needed for About button positioning */
 }
 
 .ceo-section img {
@@ -169,42 +165,40 @@ body {
     font-size: 12px;  
 }
 
-/* ================= ABOUT US BUTTON (Fixed Next to CEO) ================= */
+/* ================= ABOUT US MINI PANEL (Right of CEO) ================= */
+.about-mini {
+    width: 48%;
+    background: var(--white);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
 .about-btn {
-    position: absolute;
-    top: 10px;
-    right: -110px; /* to place it right of CEO box */
     background: var(--sky);
     color: var(--white);
-    padding: 8px 12px;
+    padding: 6px 12px;
     border: none;
     border-radius: 6px;
-    cursor: pointer;
     font-size: 12px;
-    white-space: nowrap;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-    transition: 0.3s;
+    cursor: pointer;
 }
 
 .about-btn:hover {
     background: #0284c7;
 }
 
-/* ================= ABOUT US PANEL ================= */
-.about-section {
-    width: 48%;
-    background: var(--white);
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-    text-align: left;
-}
-
+/* About sub-buttons inside mini panel */
 .about-sub {
-    display: none;
-    margin-top: 10px;
-    gap: 8px;
+    display: flex;
+    gap: 5px;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .about-sub button {
@@ -222,6 +216,7 @@ body {
     color: var(--white);
 }
 
+/* About content below sub-buttons */
 .about-content {
     display: none;
     margin-top: 10px;
@@ -251,15 +246,8 @@ footer {
         align-items: center;
     }
 
-    .ceo-section, .about-section {
+    .ceo-section, .about-mini {
         width: 100%;
-        margin-bottom: 30px;
-    }
-
-    .about-btn {
-        position: static;
-        margin: 10px 0;
-        align-self: flex-end;
     }
 }
 
@@ -285,19 +273,13 @@ footer {
 
 @media (max-width: 480px) {
     .navbar {
+        justify-content: flex-start;
         flex-wrap: nowrap;
-        justify-content: flex-start; /* left-aligned */
     }
 
     .navbar a {
+        font-size: 12px;
         padding: 6px 10px;
-        font-size: 12px; 
-    }
-
-    .dropdown-content {
-        position: relative;
-        min-width: 100%;
-        border-radius: 6px;
     }
 
     .hero img.logo {
@@ -314,7 +296,7 @@ footer {
 
     .about-sub button {
         font-size: 10px;
-        padding: 6px 8px;
+        padding: 5px 8px;
     }
 
     .about-content, .ceo-info p {
@@ -365,13 +347,11 @@ footer {
                 innovation, and excellence in interior design and construction services.
             </p>
         </div>
-
-        <!-- About Us Button Fixed Next to CEO -->
-        <button class="about-btn" onclick="toggleAbout()">About Us</button>
     </section>
 
-    <!-- ABOUT US PANEL -->
-    <section class="about-section">
+    <!-- ABOUT MINI PANEL -->
+    <section class="about-mini">
+        <button class="about-btn" onclick="toggleAbout()">About Us</button>
         <div class="about-sub" id="aboutSub">
             <button onclick="showAbout('who')">Who We Are</button>
             <button onclick="showAbout('mission')">Mission & Vision</button>
@@ -413,7 +393,6 @@ footer {
     &copy; 2026 KIM INTERIORS & CONSTRUCTION. All Rights Reserved.
 </footer>
 
-<!-- SCRIPT -->
 <script>
 function toggleAbout() {
     let sub = document.getElementById("aboutSub");
