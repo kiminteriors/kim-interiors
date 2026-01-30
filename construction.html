@@ -15,20 +15,54 @@ body {
 /* ================= NAVIGATION ================= */
 .navbar {
     display: flex;
-    justify-content: flex-start;
-    gap: 25px;
+    justify-content: flex-end; /* move items to the right */
+    align-items: center;
     background: #2c3e50;
     padding: 15px 30px;
+    gap: 25px;
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .navbar a.active {
     border-bottom: 2px solid #e67e22;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #2c3e50;
+    min-width: 200px;
+    border-radius: 6px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    color: white;
+}
+
+.dropdown-content a:hover {
+    background-color: #e67e22;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* ================= HERO ================= */
@@ -59,7 +93,6 @@ body {
     max-width: 1200px;
     margin: 50px auto;
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     gap: 20px;
 }
@@ -74,7 +107,6 @@ body {
     gap: 15px;
     align-items: flex-start;
     width: calc(33.333% - 20px);
-    box-sizing: border-box;
 }
 
 .service-card img {
@@ -89,9 +121,7 @@ body {
     color: #2c3e50;
 }
 
-/* ✅ SUB-DEPARTMENTS ALWAYS VISIBLE */
 .service-card-content ul {
-    display: block;
     margin-top: 10px;
     padding-left: 18px;
     color: #333;
@@ -119,6 +149,11 @@ footer {
 }
 
 @media (max-width: 600px) {
+    .navbar {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
     .service-card {
         width: 100%;
         flex-direction: column;
@@ -143,7 +178,15 @@ footer {
 <!-- NAVBAR -->
 <div class="navbar">
     <a href="index.html">Home</a>
-    <a href="constructions.html" class="active">Constructions</a>
+
+    <div class="dropdown">
+        <a class="active">Services ▼</a>
+        <div class="dropdown-content">
+            <a href="constructions.html">Constructions</a>
+            <a href="interior.html">Interior Designs</a>
+        </div>
+    </div>
+
     <a href="contact.html">Contact</a>
 </div>
 
