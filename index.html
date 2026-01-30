@@ -9,30 +9,35 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
+:root {
+    --sky: #38bdf8;
+    --white: #ffffff;
+}
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #f8fafc;
-    color: #000;
+    background: var(--white);
+    color: var(--sky);
 }
 
-/* ================= NAVIGATION ================= */
+/* ================= NAVBAR ================= */
 .navbar {
     display: flex;
     align-items: center;
     gap: 25px;
-    background: #000;
+    background: var(--sky);
     padding: 15px 30px;
 }
 
 .navbar a {
-    color: #38bdf8;
+    color: var(--white);
     text-decoration: none;
     font-weight: bold;
 }
 
 .navbar a.active {
-    border-bottom: 2px solid #38bdf8;
+    border-bottom: 2px solid var(--white);
 }
 
 /* Dropdown */
@@ -43,7 +48,7 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: #000;
+    background: var(--sky);
     min-width: 180px;
     border-radius: 6px;
     flex-direction: column;
@@ -52,12 +57,12 @@ body {
 
 .dropdown-content a {
     padding: 12px 16px;
-    color: #38bdf8;
+    color: var(--white);
 }
 
 .dropdown-content a:hover {
-    background-color: #0284c7;
-    color: #fff;
+    background: var(--white);
+    color: var(--sky);
 }
 
 .dropdown:hover .dropdown-content {
@@ -66,9 +71,9 @@ body {
 
 /* ================= HERO ================= */
 .hero {
-    background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
+    background: linear-gradient(rgba(56,189,248,0.2), rgba(56,189,248,0.2)),
                 url("images/background.jpg") center/cover no-repeat;
-    color: #000; 
+    color: var(--sky);
     padding: 60px 20px;
 }
 
@@ -90,7 +95,7 @@ body {
 
 /* Text next to logo */
 .hero-text {
-    margin-left: 40px; /* Adjust spacing for larger logo */
+    margin-left: 40px;
 }
 
 .hero-text h1 {
@@ -105,7 +110,7 @@ body {
     font-size: 18px;
     letter-spacing: 1.5px;
     text-transform: uppercase;
-    color: #0284c7;
+    color: var(--sky);
     margin: 0;
 }
 
@@ -121,17 +126,17 @@ body {
 
 /* ================= ABOUT US ================= */
 .about-section {
-    width: 50%; /* Left side column */
-    background: #ffffff;
+    width: 50%; 
+    background: var(--white);
     padding: 25px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 15px rgba(56,189,248,0.2);
     text-align: center;
 }
 
 .about-btn {
-    background: #0284c7;
-    color: white;
+    background: var(--sky);
+    color: var(--white);
     padding: 12px 20px;
     border: none;
     border-radius: 6px;
@@ -148,8 +153,8 @@ body {
 }
 
 .about-sub button {
-    background: #38bdf8;
-    color: white;
+    background: var(--sky);
+    color: var(--white);
     border: none;
     padding: 10px 14px;
     border-radius: 6px;
@@ -158,32 +163,33 @@ body {
 }
 
 .about-sub button:hover {
-    background-color: #0284c7;
+    background: var(--white);
+    color: var(--sky);
 }
 
 .about-content {
     display: none;
     margin-top: 25px;
     line-height: 1.8;
-    color: #333;
+    color: var(--sky);
     text-align: left;
 }
 
 .about-content h3 {
-    color: #0284c7;
+    color: var(--sky);
     margin-bottom: 10px;
 }
 
 /* ================= CEO SECTION FLOATING ================= */
 .ceo-section {
-    position: fixed; /* Floating sidebar */
+    position: fixed; 
     top: 240px;
     right: 20px;
-    width: 250px; /* Reduced size */
-    background: #ffffff;
+    width: 250px;
+    background: var(--white);
     padding: 15px;
     border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 15px rgba(56,189,248,0.2);
     text-align: center;
     z-index: 10;
 }
@@ -193,33 +199,33 @@ body {
     height: 100px;
     object-fit: cover;
     border-radius: 50%;
-    border: 3px solid #38bdf8;
+    border: 3px solid var(--sky);
     margin-bottom: 10px;
 }
 
 .ceo-info h2 {
     margin: 0;
     font-size: 18px;
-    color: #000;
+    color: var(--sky);
 }
 
 .ceo-info h4 {
     margin: 5px 0;
     font-size: 13px;
-    color: #0284c7;
+    color: var(--sky);
 }
 
 .ceo-info p {
     margin-top: 8px;
     line-height: 1.4;
-    color: #333;
-    font-size: 13px;  /* Smaller CEO description */
+    color: var(--sky);
+    font-size: 13px;
 }
 
 /* ================= FOOTER ================= */
 footer {
-    background: #000;
-    color: #38bdf8;
+    background: var(--sky);
+    color: var(--white);
     text-align: center;
     padding: 20px;
     margin-top: 60px;
@@ -267,7 +273,7 @@ footer {
     }
 
     .hero-text {
-        margin-left: 0; /* Remove left margin on small screens */
+        margin-left: 0;
     }
 }
 </style>
