@@ -20,7 +20,7 @@ body {
     font-family: Arial, sans-serif;
     background: var(--white);
     color: var(--black);
-    font-size: 14px; /* Smaller base font */
+    font-size: 14px; /* smaller base font */
 }
 
 /* ================= NAVIGATION ================= */
@@ -37,7 +37,7 @@ body {
     color: var(--white);
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px; /* smaller navbar text */
+    font-size: 14px; 
 }
 
 .navbar a.active {
@@ -93,7 +93,7 @@ body {
 }
 
 .hero img.logo {
-    height: 360px; /* keep size same */
+    height: 360px;
     max-width: 100%;
 }
 
@@ -122,7 +122,7 @@ body {
 /* ================= MAIN CONTENT ================= */
 .main-content {
     display: flex;
-    justify-content: space-between; 
+    justify-content: flex-start; 
     max-width: 1200px;
     margin: 40px auto;
     gap: 20px;
@@ -138,11 +138,12 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.12);
     text-align: center;
+    position: relative; /* needed for About button positioning */
 }
 
 .ceo-section img {
     width: 100px;
-    height: 100px; /* unchanged */
+    height: 100px; 
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid var(--sky);
@@ -168,35 +169,41 @@ body {
     font-size: 12px;  
 }
 
-/* ================= ABOUT US (Right Side) ================= */
+/* ================= ABOUT US BUTTON (Fixed Next to CEO) ================= */
+.about-btn {
+    position: absolute;
+    top: 10px;
+    right: -110px; /* to place it right of CEO box */
+    background: var(--sky);
+    color: var(--white);
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    white-space: nowrap;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.about-btn:hover {
+    background: #0284c7;
+}
+
+/* ================= ABOUT US PANEL ================= */
 .about-section {
     width: 48%;
     background: var(--white);
     padding: 15px;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end; /* move button to right */
-}
-
-.about-btn {
-    background: var(--sky);
-    color: var(--white);
-    padding: 10px 16px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 14px;
-    margin-bottom: 15px;
+    text-align: left;
 }
 
 .about-sub {
     display: none;
-    margin-top: 15px;
+    margin-top: 10px;
     gap: 8px;
-    justify-content: flex-start; /* left-to-right alignment */
     flex-wrap: wrap;
 }
 
@@ -204,7 +211,7 @@ body {
     background: var(--sky);
     color: var(--black);
     border: none;
-    padding: 8px 12px;
+    padding: 6px 10px;
     border-radius: 6px;
     cursor: pointer;
     font-size: 12px;
@@ -217,16 +224,15 @@ body {
 
 .about-content {
     display: none;
-    margin-top: 15px;
+    margin-top: 10px;
     line-height: 1.6;
     color: var(--black);
-    text-align: left;
     font-size: 12px;
 }
 
 .about-content h3 {
     color: var(--sky);
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 /* ================= FOOTER ================= */
@@ -245,14 +251,15 @@ footer {
         align-items: center;
     }
 
-    .about-section, .ceo-section {
+    .ceo-section, .about-section {
         width: 100%;
         margin-bottom: 30px;
-        align-items: center; /* About Us button centered on tablet */
     }
 
     .about-btn {
-        align-self: center; 
+        position: static;
+        margin: 10px 0;
+        align-self: flex-end;
     }
 }
 
@@ -274,27 +281,17 @@ footer {
     .hero-text p {
         font-size: 12px;
     }
-
-    .about-sub {
-        flex-direction: row; 
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
-
-    .hero-text {
-        margin-left: 0;
-    }
 }
 
 @media (max-width: 480px) {
     .navbar {
         flex-wrap: nowrap;
-        justify-content: flex-start; /* left aligned */
+        justify-content: flex-start; /* left-aligned */
     }
 
     .navbar a {
         padding: 6px 10px;
-        font-size: 12px; /* smaller text */
+        font-size: 12px; 
     }
 
     .dropdown-content {
@@ -313,11 +310,6 @@ footer {
 
     .hero-text p {
         font-size: 12px;
-    }
-
-    .about-btn {
-        font-size: 12px;
-        padding: 8px 12px;
     }
 
     .about-sub button {
@@ -361,7 +353,7 @@ footer {
 <!-- MAIN CONTENT -->
 <div class="main-content">
 
-    <!-- CEO SECTION (Left) -->
+    <!-- CEO SECTION -->
     <section class="ceo-section">
         <img src="images/ceo.jpg" alt="CEO Photo">
         <div class="ceo-info">
@@ -373,12 +365,13 @@ footer {
                 innovation, and excellence in interior design and construction services.
             </p>
         </div>
+
+        <!-- About Us Button Fixed Next to CEO -->
+        <button class="about-btn" onclick="toggleAbout()">About Us</button>
     </section>
 
-    <!-- ABOUT US (Right) -->
+    <!-- ABOUT US PANEL -->
     <section class="about-section">
-        <button class="about-btn" onclick="toggleAbout()">About Us</button>
-
         <div class="about-sub" id="aboutSub">
             <button onclick="showAbout('who')">Who We Are</button>
             <button onclick="showAbout('mission')">Mission & Vision</button>
