@@ -27,13 +27,14 @@ body {
     gap: 20px;
     background: var(--sky);
     padding: 12px 20px;
+    flex-wrap: nowrap;
 }
 
 .navbar a {
     color: var(--white);
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 14px; 
 }
 
 .navbar a.active {
@@ -51,17 +52,23 @@ body {
     background-color: var(--sky);
     min-width: 150px;
     border-radius: 6px;
+    flex-direction: column;
     z-index: 10;
 }
 
 .dropdown-content a {
-    display: block;
     padding: 10px 12px;
+    color: var(--white);
+    font-size: 14px;
+}
+
+.dropdown-content a:hover {
+    background-color: #0284c7;
     color: var(--white);
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: flex;
 }
 
 /* ================= HERO ================= */
@@ -75,8 +82,8 @@ body {
     max-width: 1200px;
     margin: auto;
     display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 20px;
+    grid-template-columns: auto 1fr;
+    gap: 40px; /* gap pushes company name slightly right */
     align-items: center;
 }
 
@@ -86,9 +93,14 @@ body {
 }
 
 /* Company text */
+.hero-text {
+    margin-left: 20px; /* small push to the right */
+}
+
 .hero-text h1 {
-    font-family: 'Algerian', serif;
+    font-family: 'Algeria', serif;
     font-size: 22px;
+    text-transform: uppercase;
     margin: 0 0 8px 0;
 }
 
@@ -99,44 +111,10 @@ body {
     text-transform: uppercase;
 }
 
-/* ================= CEO MINI (RIGHT SIDE OF NAME) ================= */
-.ceo-mini {
-    background: var(--white);
-    padding: 10px;
-    border-radius: 10px;
-    width: 220px;
-    text-align: center;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-}
-
-.ceo-mini img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    border: 3px solid var(--sky);
-    object-fit: cover;
-}
-
-.ceo-mini h3 {
-    margin: 6px 0 2px;
-    font-size: 14px;
-}
-
-.ceo-mini h5 {
-    margin: 0;
-    font-size: 11px;
-    color: var(--sky);
-}
-
-.ceo-mini p {
-    font-size: 11px;
-    margin-top: 6px;
-    line-height: 1.4;
-}
-
 /* ================= MAIN CONTENT ================= */
 .main-content {
     display: flex;
+    justify-content: flex-start; 
     max-width: 1200px;
     margin: 40px auto;
     gap: 20px;
@@ -144,9 +122,9 @@ body {
     flex-wrap: wrap;
 }
 
-/* ABOUT MINI PANEL */
-.about-mini {
-    width: 100%;
+/* ================= CEO SECTION (Left Side) ================= */
+.ceo-section {
+    width: 48%;
     background: var(--white);
     padding: 15px;
     border-radius: 12px;
@@ -154,21 +132,68 @@ body {
     text-align: center;
 }
 
+.ceo-section img {
+    width: 100px;
+    height: 100px; 
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--sky);
+    margin-bottom: 8px;
+}
+
+.ceo-info h2 {
+    margin: 0;
+    font-size: 16px; 
+    color: var(--black);
+}
+
+.ceo-info h4 {
+    margin: 4px 0;
+    font-size: 12px; 
+    color: var(--sky);
+}
+
+.ceo-info p {
+    margin-top: 6px;
+    line-height: 1.4;
+    color: var(--black);
+    font-size: 12px;  
+}
+
+/* ================= ABOUT US MINI PANEL (Right of CEO) ================= */
+.about-mini {
+    width: 48%;
+    background: var(--white);
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
 .about-btn {
     background: var(--sky);
     color: var(--white);
-    padding: 6px 14px;
-    border-radius: 6px;
+    padding: 6px 12px;
     border: none;
-    font-size: 13px;
+    border-radius: 6px;
+    font-size: 12px;
     cursor: pointer;
 }
 
+.about-btn:hover {
+    background: #0284c7;
+}
+
+/* About sub-buttons inside mini panel */
 .about-sub {
-    display: none;
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 8px;
-    margin-top: 10px;
 }
 
 .about-sub button {
@@ -177,14 +202,27 @@ body {
     border: none;
     padding: 6px 10px;
     border-radius: 6px;
-    font-size: 12px;
     cursor: pointer;
+    font-size: 12px;
 }
 
+.about-sub button:hover {
+    background-color: #0284c7;
+    color: var(--white);
+}
+
+/* About content below sub-buttons */
 .about-content {
     display: none;
     margin-top: 10px;
+    line-height: 1.6;
+    color: var(--black);
     font-size: 12px;
+}
+
+.about-content h3 {
+    color: var(--sky);
+    margin-bottom: 4px;
 }
 
 /* ================= FOOTER ================= */
@@ -196,20 +234,65 @@ footer {
     margin-top: 40px;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 900px) {
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .ceo-section, .about-mini {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
+        gap: 20px;
     }
 
     .hero img.logo {
         height: 180px;
+        margin: auto; /* center logo on mobile */
     }
 
-    .ceo-mini {
-        margin: auto;
-        width: 90%;
+    .hero-text {
+        margin-left: 0; /* reset margin for mobile */
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+    }
+
+    .navbar a {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .hero img.logo {
+        height: 140px;
+    }
+
+    .hero-text h1 {
+        font-size: 18px;
+    }
+
+    .hero-text p {
+        font-size: 12px;
+    }
+
+    .about-sub button {
+        font-size: 10px;
+        padding: 5px 8px;
+    }
+
+    .about-content, .ceo-info p {
+        font-size: 12px;
     }
 }
 </style>
@@ -227,37 +310,40 @@ footer {
             <a href="interior.html">Interior Designs</a>
         </div>
     </div>
-    <a href="contact.html">Contact</a>
+    <!-- Removed Contact as requested -->
 </div>
 
 <!-- HERO -->
 <section class="hero">
     <div class="hero-content">
-        <img src="images/logo.jpg" class="logo" alt="Logo">
-
+        <img src="images/logo.jpg" alt="Kim Interiors Logo" class="logo">
         <div class="hero-text">
             <h1>KIM INTERIORS & CONSTRUCTION</h1>
             <p>DETAILS DEFINE THE DIFFERENCE</p>
         </div>
-
-        <!-- CEO squeezed here -->
-        <div class="ceo-mini">
-            <img src="images/ceo.jpg" alt="CEO">
-            <h3>Albright Kimutai</h3>
-            <h5>CEO</h5>
-            <p>
-                Visionary leadership delivering excellence in interior
-                design and construction services.
-            </p>
-        </div>
     </div>
 </section>
 
-<!-- MAIN -->
+<!-- MAIN CONTENT -->
 <div class="main-content">
+
+    <!-- CEO SECTION -->
+    <section class="ceo-section">
+        <img src="images/ceo.jpg" alt="CEO Photo">
+        <div class="ceo-info">
+            <h2>Albright Kimutai</h2>
+            <h4>CEO – Kim Interiors & Construction Company</h4>
+            <p>
+                Albright Kimutai is the founder and CEO of Kim Interiors & Construction Company,
+                providing visionary leadership with a strong commitment to quality craftsmanship,
+                innovation, and excellence in interior design and construction services.
+            </p>
+        </div>
+    </section>
+
+    <!-- ABOUT MINI PANEL -->
     <section class="about-mini">
         <button class="about-btn" onclick="toggleAbout()">About Us</button>
-
         <div class="about-sub" id="aboutSub">
             <button onclick="showAbout('who')">Who We Are</button>
             <button onclick="showAbout('mission')">Mission & Vision</button>
@@ -265,32 +351,49 @@ footer {
         </div>
 
         <div class="about-content" id="who">
-            <p>Professional interior design and construction company.</p>
+            <h3>Who We Are</h3>
+            <p>
+                Kim Interiors & Construction is a professional interior design and construction company
+                dedicated to creating modern, stylish, and functional spaces.
+            </p>
+            <p>
+                We specialize in residential and commercial interior designs and constructions,
+                blending creativity with quality workmanship.
+            </p>
         </div>
 
         <div class="about-content" id="mission">
-            <p><strong>Mission:</strong> Transform spaces.</p>
-            <p><strong>Vision:</strong> Leading brand in Kenya.</p>
+            <h3>Mission & Vision</h3>
+            <p><strong>Mission:</strong> To transform spaces into inspiring environments.</p>
+            <p><strong>Vision:</strong> To be a leading interior design and construction brand in Kenya.</p>
         </div>
 
         <div class="about-content" id="contacts">
-            <p>📍 Eldoret | 📞 +254 716 631 840</p>
+            <h3>Contact Information</h3>
+            <p>
+                📍 Eldoret, Uasin Gishu, Rift Valley<br>
+                📧 kim.interiorke@gmail.com<br>
+                📞 +254 716 631 840
+            </p>
         </div>
     </section>
+
 </div>
 
+<!-- FOOTER -->
 <footer>
-    &copy; 2026 KIM INTERIORS & CONSTRUCTION
+    &copy; 2026 KIM INTERIORS & CONSTRUCTION. All Rights Reserved.
 </footer>
 
 <script>
 function toggleAbout() {
-    const sub = document.getElementById("aboutSub");
+    let sub = document.getElementById("aboutSub");
     sub.style.display = sub.style.display === "flex" ? "none" : "flex";
 }
 
 function showAbout(id) {
-    document.querySelectorAll(".about-content").forEach(d => d.style.display = "none");
+    document.querySelectorAll(".about-content")
+        .forEach(div => div.style.display = "none");
     document.getElementById(id).style.display = "block";
 }
 </script>
