@@ -28,7 +28,8 @@ body {
     align-items: center;
     gap: 25px;
     background: var(--sky);
-    padding: 15px 30px;
+    padding: 15px 20px;
+    flex-wrap: wrap;
 }
 
 .navbar a {
@@ -75,10 +76,9 @@ body {
     background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)),
                 url("images/background.jpg") center/cover no-repeat;
     color: var(--black); 
-    padding: 60px 20px;
+    padding: 50px 15px;
 }
 
-/* Flex container for logo and text */
 .hero-content {
     display: flex;
     align-items: center;
@@ -88,13 +88,11 @@ body {
     gap: 20px;
 }
 
-/* Logo on left */
 .hero img.logo {
-    height: 360px; /* increased by 1.5x */
+    height: 360px; /* larger logo */
     max-width: 100%;
 }
 
-/* Text next to logo */
 .hero-text {
     margin-left: 40px;
 }
@@ -119,14 +117,14 @@ body {
 /* ================= MAIN CONTENT ================= */
 .main-content {
     display: flex;
-    justify-content: flex-end; /* About on the right */
+    justify-content: flex-end; 
     max-width: 1200px;
     margin: 60px auto;
     gap: 20px;
     padding: 0 20px;
 }
 
-/* ================= ABOUT US ================= */
+/* ABOUT US (Right Side) */
 .about-section {
     width: 50%;
     background: var(--white);
@@ -152,6 +150,7 @@ body {
     margin-top: 20px;
     gap: 10px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .about-sub button {
@@ -182,12 +181,12 @@ body {
     margin-bottom: 10px;
 }
 
-/* ================= CEO SECTION (Floating Left, smaller & moved down) ================= */
+/* CEO SECTION (Floating Left) */
 .ceo-section {
     position: fixed;
-    top: 320px; /* moved down */
+    top: 360px;
     left: 20px;
-    width: 200px; /* smaller width */
+    width: 200px;
     background: var(--white);
     padding: 12px; 
     border-radius: 12px;
@@ -233,7 +232,7 @@ footer {
     margin-top: 60px;
 }
 
-/* ================= MOBILE ================= */
+/* ================= RESPONSIVE ================= */
 @media (max-width: 1024px) {
     .main-content {
         flex-direction: column;
@@ -277,6 +276,59 @@ footer {
 
     .hero-text {
         margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar a {
+        padding: 8px 0;
+    }
+
+    .dropdown-content {
+        position: relative;
+        min-width: 100%;
+        border-radius: 6px;
+    }
+
+    .hero img.logo {
+        height: 140px;
+    }
+
+    .hero-text h1 {
+        font-size: 20px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .about-btn {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+
+    .about-sub button {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    .about-content {
+        font-size: 14px;
+    }
+
+    .ceo-section {
+        width: 100%;
+        position: static;
+        margin-top: 20px;
+    }
+
+    .ceo-info p {
+        font-size: 12px;
     }
 }
 </style>
@@ -351,7 +403,7 @@ footer {
 
 </div>
 
-<!-- CEO SECTION (Floating Left) -->
+<!-- CEO SECTION -->
 <section class="ceo-section">
     <img src="images/ceo.jpg" alt="CEO Photo">
     <div class="ceo-info">
