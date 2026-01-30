@@ -22,7 +22,7 @@ img {
 /* ================= NAVIGATION ================= */
 .navbar {
     display: flex;
-    justify-content: flex-start;
+    align-items: center;
     gap: 25px;
     background: #2c3e50;
     padding: 15px 30px;
@@ -36,6 +36,38 @@ img {
 
 .navbar a.active {
     border-bottom: 2px solid #e67e22;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #2c3e50;
+    min-width: 200px;
+    border-radius: 6px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 10;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    color: white;
+}
+
+.dropdown-content a:hover {
+    background: #e67e22;
+}
+
+/* Show dropdown */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* ================= HERO ================= */
@@ -66,10 +98,8 @@ img {
     max-width: 1200px;
     margin: 50px auto;
     display: flex;
-    flex-direction: row; /* Arrange horizontally */
-    flex-wrap: wrap;     /* Wrap to next line if needed */
-    gap: 20px;           /* Space between cards */
-    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .service-card {
@@ -79,9 +109,8 @@ img {
     padding: 20px;
     display: flex;
     gap: 15px;
-    align-items: flex-start;
-    flex: 1 1 calc(33% - 20px); /* 3 cards per row */
-    min-width: 280px;            /* Prevent too small */
+    flex: 1 1 calc(33% - 20px);
+    min-width: 280px;
 }
 
 .service-card img {
@@ -91,22 +120,15 @@ img {
     border-radius: 10px;
 }
 
-.service-card-content {
-    flex: 1;
-}
-
 .service-card-content h3 {
     margin: 0;
     color: #2c3e50;
     font-size: 20px;
 }
 
-/* 🔥 IMPORTANT FIX */
 .service-card-content ul {
-    display: block; /* ALWAYS VISIBLE */
     margin-top: 10px;
     padding-left: 20px;
-    color: #333;
     line-height: 1.6;
 }
 
@@ -125,19 +147,10 @@ footer {
 
 /* ================= MOBILE ================= */
 @media (max-width: 800px) {
-    .services-container {
-        width: 90%;
-        margin: 30px auto;
-    }
-
     .service-card {
         flex-direction: column;
         align-items: center;
         text-align: center;
-    }
-
-    .service-card img {
-        margin-bottom: 10px;
     }
 
     .service-card-content ul {
@@ -153,7 +166,14 @@ footer {
 <!-- NAVBAR -->
 <div class="navbar">
     <a href="index.html">Home</a>
-    <a href="services.html" class="active">Services</a>
+
+    <div class="dropdown">
+        <a class="active">Services ▼</a>
+        <div class="dropdown-content">
+            <a href="constructions.html">Constructions</a>
+        </div>
+    </div>
+
     <a href="contact.html">Contact</a>
 </div>
 
@@ -167,18 +187,18 @@ footer {
 <div class="services-container">
 
     <div class="service-card">
-        <img src="images/walls-ceiling.jpg" alt="Walls and Ceiling Works">
+        <img src="images/walls-ceiling.jpg">
         <div class="service-card-content">
             <h3>1. Walls & Ceiling Works</h3>
             <ul>
-                <li>Wall skimming for smooth and flawless finishes</li>
-                <li>Gypsum, POP & modern ceiling designs</li>
+                <li>Wall skimming for smooth finishes</li>
+                <li>Gypsum, POP & modern ceilings</li>
             </ul>
         </div>
     </div>
 
     <div class="service-card">
-        <img src="images/floor-design.jpg" alt="Floor Designs">
+        <img src="images/floor-design.jpg">
         <div class="service-card-content">
             <h3>2. Floor Designs</h3>
             <ul>
@@ -189,46 +209,43 @@ footer {
     </div>
 
     <div class="service-card">
-        <img src="images/cabinets-lighting.jpg" alt="Cabinets and Lighting">
+        <img src="images/cabinets-lighting.jpg">
         <div class="service-card-content">
             <h3>3. Cabinets & Lightings</h3>
             <ul>
                 <li>Wardrobes</li>
                 <li>Kitchen cabinets</li>
-                <li>Ambient, task & decorative lighting</li>
+                <li>Decorative lighting</li>
             </ul>
         </div>
     </div>
 
     <div class="service-card">
-        <img src="images/fittings.jpg" alt="Fitting Works">
+        <img src="images/fittings.jpg">
         <div class="service-card-content">
             <h3>4. Fitting Work Designs</h3>
             <ul>
                 <li>Ceramic fittings</li>
-                <li>Taps & sanitary fittings</li>
-                <li>Curtains and blinds</li>
-                <li>Aluminium works</li>
+                <li>Sanitary & aluminium works</li>
             </ul>
         </div>
     </div>
 
     <div class="service-card">
-        <img src="images/cleaning-handover.jpg" alt="Cleaning and Handover">
+        <img src="images/cleaning-handover.jpg">
         <div class="service-card-content">
             <h3>5. Cleaning & Hand Over</h3>
             <ul>
-                <li>Thorough post-construction interior cleaning</li>
-                <li>Final inspection & professional client handover</li>
+                <li>Post-construction cleaning</li>
+                <li>Final inspection & handover</li>
             </ul>
         </div>
     </div>
 
 </div>
 
-<!-- FOOTER -->
 <footer>
-    &copy; 2026 KIM CONSTRUCTION & INTERIOR DESIGNS COMPANY. All Rights Reserved.
+    &copy; 2026 KIM CONSTRUCTION & INTERIOR DESIGNS COMPANY
 </footer>
 
 </body>
