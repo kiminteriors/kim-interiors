@@ -12,7 +12,7 @@ body {
     background: #f4f4f4;
 }
 
-/* NAVIGATION */
+/* ================= NAVIGATION ================= */
 .navbar {
     display: flex;
     justify-content: flex-start;
@@ -27,11 +27,42 @@ body {
     font-weight: bold;
 }
 
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #2c3e50;
+    min-width: 200px;
+    border-radius: 6px;
+    z-index: 100;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 16px;
+    color: white;
+}
+
+.dropdown-content a:hover {
+    background: #3498db;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
 .navbar a.active {
     border-bottom: 2px solid #e67e22;
 }
 
-/* CONTACT SECTION */
+/* ================= CONTACT SECTION ================= */
 .contact-section {
     max-width: 800px;
     margin: 50px auto;
@@ -43,7 +74,7 @@ body {
 }
 
 .contact-section h1 {
-    font-family: 'Algeria', serif;
+    font-family: "Algerian", "Times New Roman", serif;
     font-size: 42px;
     margin-bottom: 20px;
     text-transform: uppercase;
@@ -69,7 +100,7 @@ body {
     background: #2980b9;
 }
 
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer {
     background: #2c3e50;
     color: white;
@@ -78,11 +109,17 @@ footer {
     margin-top: 50px;
 }
 
-/* MOBILE */
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
     .navbar {
         justify-content: center;
         flex-wrap: wrap;
+    }
+
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        text-align: center;
     }
 }
 </style>
@@ -92,7 +129,16 @@ footer {
 <!-- NAVBAR -->
 <div class="navbar">
     <a href="index.html">Home</a>
-    <a href="services.html">Services</a>
+
+    <!-- SERVICES DROPDOWN -->
+    <div class="dropdown">
+        <a href="#">Services ▼</a>
+        <div class="dropdown-content">
+            <a href="construction.html">Construction</a>
+            <a href="interior.html">Interior Designs</a>
+        </div>
+    </div>
+
     <a href="contact.html" class="active">Contact</a>
 </div>
 
@@ -100,7 +146,7 @@ footer {
 <section class="contact-section">
     <h1>Contact Us</h1>
 
-    <p>📍 Eldoret, UasinGishu, Rift Valley, Kenya</p>
+    <p>📍 Eldoret, Uasin Gishu, Rift Valley, Kenya</p>
 
     <p>
         📧 Email:
@@ -121,7 +167,6 @@ footer {
         TikTok
     </a>
 
-    <!-- ✅ NEW INSTAGRAM LINK -->
     <a href="https://www.instagram.com/kim_interiors.construction/" target="_blank">
         Instagram
     </a>
