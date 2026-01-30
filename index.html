@@ -47,6 +47,7 @@ body {
     min-width: 180px;
     border-radius: 6px;
     flex-direction: column;
+    z-index: 10;
 }
 
 .dropdown-content a {
@@ -68,17 +69,20 @@ body {
                 url("images/background.jpg") center/cover no-repeat;
     color: white;
     text-align: center;
-    padding: 90px 20px;
+    padding: 120px 20px;
 }
 
+/* LOGO DOUBLED */
 .hero img.logo {
-    height: 180px;
+    height: 360px;   /* DOUBLED SIZE */
+    margin-bottom: 20px;
 }
 
 .hero h1 {
     font-family: 'Algeria', serif;
     font-size: 48px;
     text-transform: uppercase;
+    margin: 10px 0;
 }
 
 .hero p {
@@ -125,13 +129,28 @@ body {
     color: #555;
 }
 
-/* ABOUT */
+/* ABOUT US SECTION */
 .about-section {
     max-width: 1000px;
-    margin: 50px auto;
+    margin: 60px auto;
     background: white;
-    padding: 30px;
-    border-radius: 10px;
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.about-section h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.about-section p {
+    line-height: 1.8;
+    color: #444;
+    font-size: 16px;
+    text-align: center;
 }
 
 /* FOOTER */
@@ -140,10 +159,24 @@ footer {
     color: white;
     text-align: center;
     padding: 20px;
+    margin-top: 60px;
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
+    .hero img.logo {
+        height: 240px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 20px;
+        letter-spacing: 2px;
+    }
+
     .ceo-section {
         flex-direction: column;
         text-align: center;
@@ -169,7 +202,7 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-    <img src="images/logo.jpg" alt="Logo" class="logo">
+    <img src="images/logo.png" alt="Kim Interiors Logo" class="logo">
     <h1>KIM INTERIORS & CONSTRUCTION</h1>
     <p>DETAILS DEFINE THE DIFFERENCE</p>
 </section>
@@ -182,17 +215,20 @@ footer {
         <h4>CEO – Kim Interiors & Construction Company</h4>
         <p>
             Albright Kimutai is the founder and CEO of Kim Interiors & Construction Company,
-            bringing visionary leadership and a strong commitment to quality, innovation,
-            and excellence in interior design and construction services.
+            providing visionary leadership with a strong commitment to quality craftsmanship,
+            innovation, and excellence in interior design and construction services.
         </p>
     </div>
 </section>
 
-<!-- ABOUT -->
+<!-- ABOUT US -->
 <section class="about-section">
+    <h2>About Us</h2>
     <p>
         Kim Interiors & Construction is a professional interior design and construction company
-        dedicated to creating modern, stylish, and functional spaces.
+        dedicated to transforming spaces into modern, stylish, and functional environments.
+        We specialize in residential and commercial projects, combining creativity, quality
+        workmanship, and attention to detail to deliver exceptional results.
     </p>
 </section>
 
