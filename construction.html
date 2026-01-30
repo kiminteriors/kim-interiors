@@ -65,6 +65,7 @@ body {
     color: var(--sky);
 }
 
+/* Show dropdown */
 .dropdown:hover .dropdown-content {
     display: block;
 }
@@ -74,7 +75,7 @@ body {
     background: url("images/construction-hero.jpg") center/cover no-repeat;
     position: relative;
     text-align: center;
-    padding: 90px 20px;
+    padding: 110px 20px;
     color: var(--white);
 }
 
@@ -82,7 +83,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(56,189,248,0.35);
+    background: rgba(56, 189, 248, 0.35);
 }
 
 .hero * {
@@ -90,14 +91,19 @@ body {
 }
 
 .hero h1 {
-    font-size: 48px;
-    margin: 10px 0;
+    font-family: "Segoe UI", "Montserrat", sans-serif;
+    font-size: 52px;
+    letter-spacing: 4px;
+    margin: 0;
     text-transform: uppercase;
 }
 
 .hero p {
-    font-size: 26px;
-    margin-top: 10px;
+    font-family: "Georgia", serif;
+    font-size: 24px;
+    margin-top: 15px;
+    font-style: italic;
+    letter-spacing: 1px;
 }
 
 /* ================= SERVICES ================= */
@@ -113,7 +119,7 @@ body {
 .service-card {
     background: var(--white);
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(56,189,248,0.2);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
     padding: 20px;
     display: flex;
     gap: 15px;
@@ -127,7 +133,7 @@ body {
     border-radius: 10px;
 }
 
-/* ===== DEPARTMENT FONTS NOW BLACK ===== */
+/* 🔹 DEPARTMENT TEXT → BLACK */
 .service-card-content h3 {
     margin: 0;
     color: var(--black);
@@ -172,6 +178,15 @@ footer {
         padding-left: 0;
         list-style-position: inside;
     }
+
+    .hero h1 {
+        font-size: 36px;
+        letter-spacing: 2px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
 }
 </style>
 </head>
@@ -194,8 +209,8 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-    <h1>Constructions</h1>
-    <p>Building Dreams into Reality</p>
+    <h1>CONSTRUCTIONS</h1>
+    <p>Building Dreams Into Reality</p>
 </section>
 
 <!-- SERVICES -->
