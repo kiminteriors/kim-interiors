@@ -9,14 +9,13 @@
 :root {
     --sky: #38bdf8;
     --white: #ffffff;
-    --black: #000000;
 }
 
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: var(--white);
-    color: var(--black);
+    color: var(--sky);
 }
 
 /* ================= NAVIGATION ================= */
@@ -51,7 +50,6 @@ body {
     background: var(--sky);
     min-width: 200px;
     border-radius: 6px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.25);
     z-index: 10;
 }
 
@@ -62,7 +60,8 @@ body {
 }
 
 .dropdown-content a:hover {
-    background: var(--black);
+    background: var(--white);
+    color: var(--sky);
 }
 
 /* Show dropdown */
@@ -83,7 +82,7 @@ body {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0,0,0,0.45);
+    background: rgba(56, 189, 248,0.35); /* sky blue overlay for contrast */
 }
 
 .hero * {
@@ -113,7 +112,7 @@ body {
 .service-card {
     background: var(--white);
     border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    box-shadow: 0 4px 12px rgba(56, 189, 248,0.2);
     padding: 20px;
     display: flex;
     gap: 15px;
@@ -129,18 +128,23 @@ body {
 
 .service-card-content h3 {
     margin: 0;
-    color: var(--black);
+    color: var(--sky);
 }
 
 .service-card-content ul {
     margin-top: 10px;
     padding-left: 18px;
     line-height: 1.6;
+    color: var(--sky);
+}
+
+.service-card-content ul li {
+    margin-bottom: 8px;
 }
 
 /* ================= FOOTER ================= */
 footer {
-    background: var(--black);
+    background: var(--sky);
     color: var(--white);
     text-align: center;
     padding: 20px;
@@ -196,7 +200,7 @@ footer {
 <div class="services-container">
 
     <div class="service-card">
-        <img src="images/planning.jpg">
+        <img src="images/planning.jpg" alt="Planning">
         <div class="service-card-content">
             <h3>1. Planning</h3>
             <ul>
@@ -209,7 +213,7 @@ footer {
     </div>
 
     <div class="service-card">
-        <img src="images/substructure.jpg">
+        <img src="images/substructure.jpg" alt="Substructure">
         <div class="service-card-content">
             <h3>2. Substructure</h3>
             <ul>
@@ -220,7 +224,7 @@ footer {
     </div>
 
     <div class="service-card">
-        <img src="images/superstructure.jpg">
+        <img src="images/superstructure.jpg" alt="Superstructure">
         <div class="service-card-content">
             <h3>3. Superstructure</h3>
             <ul>
@@ -232,7 +236,7 @@ footer {
     </div>
 
     <div class="service-card">
-        <img src="images/electrical-plumbing.jpg">
+        <img src="images/electrical-plumbing.jpg" alt="Electrical & Plumbing">
         <div class="service-card-content">
             <h3>4. Electrical & Plumbing</h3>
             <ul>
@@ -243,7 +247,7 @@ footer {
     </div>
 
     <div class="service-card">
-        <img src="images/plastering-screeding.jpg">
+        <img src="images/plastering-screeding.jpg" alt="Plastering & Screeding">
         <div class="service-card-content">
             <h3>5. Plastering & Screeding</h3>
             <ul>
