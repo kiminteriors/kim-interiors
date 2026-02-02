@@ -34,7 +34,7 @@ body {
     color: var(--white);
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px; 
+    font-size: 14px;
 }
 
 .navbar a.active {
@@ -64,7 +64,6 @@ body {
 
 .dropdown-content a:hover {
     background-color: #0284c7;
-    color: var(--white);
 }
 
 .dropdown:hover .dropdown-content {
@@ -73,8 +72,7 @@ body {
 
 /* ================= HERO ================= */
 .hero {
-    background: linear-gradient(rgba(255,255,255,0.85), rgba(255,255,255,0.85)),
-                url("images/background.jpg") center/cover no-repeat;
+    background: url("images/background.jpg") center/cover no-repeat;
     padding: 30px 15px;
 }
 
@@ -83,7 +81,7 @@ body {
     margin: auto;
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 40px; /* gap pushes company name slightly right */
+    gap: 40px;
     align-items: center;
 }
 
@@ -94,7 +92,7 @@ body {
 
 /* Company text */
 .hero-text {
-    margin-left: 20px; /* small push to the right */
+    margin-left: 20px;
 }
 
 .hero-text h1 {
@@ -102,6 +100,7 @@ body {
     font-size: 22px;
     text-transform: uppercase;
     margin: 0 0 8px 0;
+    color: var(--black);
 }
 
 .hero-text p {
@@ -109,12 +108,13 @@ body {
     font-size: 14px;
     letter-spacing: 1px;
     text-transform: uppercase;
+    color: var(--black);
 }
 
 /* ================= MAIN CONTENT ================= */
 .main-content {
     display: flex;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     max-width: 1200px;
     margin: 40px auto;
     gap: 20px;
@@ -122,7 +122,7 @@ body {
     flex-wrap: wrap;
 }
 
-/* ================= CEO SECTION (Left Side) ================= */
+/* ================= CEO SECTION ================= */
 .ceo-section {
     width: 48%;
     background: var(--white);
@@ -134,7 +134,7 @@ body {
 
 .ceo-section img {
     width: 100px;
-    height: 100px; 
+    height: 100px;
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid var(--sky);
@@ -143,24 +143,22 @@ body {
 
 .ceo-info h2 {
     margin: 0;
-    font-size: 16px; 
-    color: var(--black);
+    font-size: 16px;
 }
 
 .ceo-info h4 {
     margin: 4px 0;
-    font-size: 12px; 
+    font-size: 12px;
     color: var(--sky);
 }
 
 .ceo-info p {
     margin-top: 6px;
     line-height: 1.4;
-    color: var(--black);
-    font-size: 12px;  
+    font-size: 12px;
 }
 
-/* ================= ABOUT US MINI PANEL (Right of CEO) ================= */
+/* ================= ABOUT MINI PANEL ================= */
 .about-mini {
     width: 48%;
     background: var(--white);
@@ -188,7 +186,6 @@ body {
     background: #0284c7;
 }
 
-/* About sub-buttons inside mini panel */
 .about-sub {
     display: flex;
     gap: 5px;
@@ -211,12 +208,10 @@ body {
     color: var(--white);
 }
 
-/* About content below sub-buttons */
 .about-content {
     display: none;
     margin-top: 10px;
     line-height: 1.6;
-    color: var(--black);
     font-size: 12px;
 }
 
@@ -255,20 +250,15 @@ footer {
 
     .hero img.logo {
         height: 180px;
-        margin: auto; /* center logo on mobile */
+        margin: auto;
     }
 
     .hero-text {
-        margin-left: 0; /* reset margin for mobile */
+        margin-left: 0;
     }
 }
 
 @media (max-width: 480px) {
-    .navbar {
-        justify-content: flex-start;
-        flex-wrap: nowrap;
-    }
-
     .navbar a {
         font-size: 12px;
         padding: 6px 10px;
@@ -283,15 +273,6 @@ footer {
     }
 
     .hero-text p {
-        font-size: 12px;
-    }
-
-    .about-sub button {
-        font-size: 10px;
-        padding: 5px 8px;
-    }
-
-    .about-content, .ceo-info p {
         font-size: 12px;
     }
 }
@@ -310,7 +291,7 @@ footer {
             <a href="interior.html">Interior Designs</a>
         </div>
     </div>
-    <a href="contact.html">Contact</a> <!-- Contact button restored -->
+    <a href="contact.html">Contact</a>
 </div>
 
 <!-- HERO -->
@@ -327,7 +308,6 @@ footer {
 <!-- MAIN CONTENT -->
 <div class="main-content">
 
-    <!-- CEO SECTION -->
     <section class="ceo-section">
         <img src="images/ceo.jpg" alt="CEO Photo">
         <div class="ceo-info">
@@ -336,12 +316,11 @@ footer {
             <p>
                 Albright Kimutai is the founder and CEO of Kim Interiors & Construction Company,
                 providing visionary leadership with a strong commitment to quality craftsmanship,
-                innovation, and excellence in interior design and construction services.
+                innovation, and excellence.
             </p>
         </div>
     </section>
 
-    <!-- ABOUT MINI PANEL -->
     <section class="about-mini">
         <button class="about-btn" onclick="toggleAbout()">About Us</button>
         <div class="about-sub" id="aboutSub">
@@ -354,24 +333,20 @@ footer {
             <h3>Who We Are</h3>
             <p>
                 Kim Interiors & Construction is a professional interior design and construction company
-                dedicated to creating modern, stylish, and functional spaces.
-            </p>
-            <p>
-                We specialize in residential and commercial interior designs and constructions,
-                blending creativity with quality workmanship.
+                dedicated to modern, stylish, and functional spaces.
             </p>
         </div>
 
         <div class="about-content" id="mission">
             <h3>Mission & Vision</h3>
             <p><strong>Mission:</strong> To transform spaces into inspiring environments.</p>
-            <p><strong>Vision:</strong> To be a leading interior design and construction brand in Kenya.</p>
+            <p><strong>Vision:</strong> To be a leading brand in Kenya.</p>
         </div>
 
         <div class="about-content" id="contacts">
             <h3>Contact Information</h3>
             <p>
-                📍 Eldoret, Uasin Gishu, Rift Valley<br>
+                📍 Eldoret, Kenya<br>
                 📧 kim.interiorke@gmail.com<br>
                 📞 +254 716 631 840
             </p>
@@ -380,7 +355,6 @@ footer {
 
 </div>
 
-<!-- FOOTER -->
 <footer>
     &copy; 2026 KIM INTERIORS & CONSTRUCTION. All Rights Reserved.
 </footer>
