@@ -28,6 +28,8 @@ body {
     background: var(--sky);
     padding: 12px 20px;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 10; /* make navbar clickable above everything */
 }
 
 .navbar a {
@@ -52,6 +54,7 @@ body {
     min-width: 150px;
     border-radius: 6px;
     flex-direction: column;
+    z-index: 11; /* dropdown above overlay */
 }
 
 .dropdown:hover .dropdown-content {
@@ -78,7 +81,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.3); /* 0.3 opacity = slightly faded */
+    background: rgba(255, 255, 255, 0.3); /* slightly faded */
     z-index: 0;
 }
 
