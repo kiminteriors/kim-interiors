@@ -76,13 +76,16 @@ body {
     grid-template-columns: auto 1fr;
     gap: 40px;
     align-items: center;
+
+    /* ✅ ONLY CHANGE */
+    margin-left: 20px;
 }
 
 .hero img.logo {
     height: 300px;
 }
 
-/* ✅ ONLY CHANGE: Algerian font */
+/* Algerian font ONLY */
 .hero h1 {
     font-family: Algerian, "Algeria", serif;
 }
@@ -188,6 +191,7 @@ footer {
         grid-template-columns: 1fr;
         text-align: center;
         gap: 20px;
+        margin-left: 0; /* keep mobile centered */
     }
 
     .hero img.logo {
