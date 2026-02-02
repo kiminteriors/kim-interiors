@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KIM INTERIORS & CONSTRUCTION | Home</title>
-
 <style>
 :root {
     --sky: #38bdf8;
@@ -71,7 +70,7 @@ body {
     padding: 30px 15px;
 }
 
-/* Overlay to fade background image */
+/* Overlay to slightly fade the background */
 .hero::before {
     content: "";
     position: absolute;
@@ -79,12 +78,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.4); /* Adjust opacity for fade */
+    background: rgba(255, 255, 255, 0.3); /* 0.3 opacity = slightly faded */
     z-index: 0;
 }
 
 .hero-content {
-    position: relative; /* Bring content above overlay */
+    position: relative; /* content above overlay */
     max-width: 1200px;
     margin: auto;
     display: grid;
@@ -204,14 +203,12 @@ footer {
         align-items: center;
     }
 
-    .ceo-section,
-    .about-mini {
+    .ceo-section, .about-mini {
         width: 100%;
     }
 }
 
 @media (max-width: 600px) {
-
     .navbar {
         justify-content: center;
         text-align: center;
@@ -239,7 +236,6 @@ footer {
 }
 </style>
 </head>
-
 <body>
 
 <div class="navbar">
@@ -265,7 +261,6 @@ footer {
 </section>
 
 <div class="main-content">
-
     <section class="ceo-section">
         <img src="images/ceo.jpg">
         <h2>Albright Kimutai</h2>
@@ -293,10 +288,9 @@ footer {
             📞 +254 716 631 840<br>
             📧 info@kiminteriors.co.ke<br>
             📍 Eldoret, Kenya<br>
-            We are available Monday to Friday from 8:00 AM to 5:00 PM. Feel free to reach out for consultations or inquiries.
+            Feel free to reach out for consultations or inquiries.
         </div>
     </section>
-
 </div>
 
 <footer>&copy; 2026 KIM INTERIORS & CONSTRUCTION</footer>
