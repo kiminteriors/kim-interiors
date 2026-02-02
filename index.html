@@ -27,14 +27,12 @@ body {
     gap: 20px;
     background: var(--sky);
     padding: 12px 20px;
-    flex-wrap: nowrap;
 }
 
 .navbar a {
     color: var(--white);
     text-decoration: none;
     font-weight: bold;
-    font-size: 14px;
 }
 
 .navbar a.active {
@@ -53,21 +51,15 @@ body {
     min-width: 150px;
     border-radius: 6px;
     flex-direction: column;
-    z-index: 10;
+}
+
+.dropdown:hover .dropdown-content {
+    display: flex;
 }
 
 .dropdown-content a {
     padding: 10px 12px;
     color: var(--white);
-    font-size: 14px;
-}
-
-.dropdown-content a:hover {
-    background-color: #0284c7;
-}
-
-.dropdown:hover .dropdown-content {
-    display: flex;
 }
 
 /* ================= HERO ================= */
@@ -85,41 +77,19 @@ body {
     align-items: center;
 }
 
-/* Logo */
 .hero img.logo {
     height: 300px;
-}
-
-/* Company text */
-.hero-text {
-    margin-left: 20px;
-}
-
-.hero-text h1 {
-    font-family: 'Algeria', serif;
-    font-size: 22px;
-    text-transform: uppercase;
-    margin: 0 0 8px 0;
-    color: var(--black);
-}
-
-.hero-text p {
-    font-family: 'Cinzel', serif;
-    font-size: 14px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: var(--black);
 }
 
 /* ================= MAIN CONTENT ================= */
 .main-content {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     max-width: 1200px;
     margin: 40px auto;
     gap: 20px;
     padding: 0 20px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* ✅ CEO LEFT, ABOUT RIGHT */
 }
 
 /* ================= CEO SECTION ================= */
@@ -135,27 +105,8 @@ body {
 .ceo-section img {
     width: 100px;
     height: 100px;
-    object-fit: cover;
     border-radius: 50%;
     border: 3px solid var(--sky);
-    margin-bottom: 8px;
-}
-
-.ceo-info h2 {
-    margin: 0;
-    font-size: 16px;
-}
-
-.ceo-info h4 {
-    margin: 4px 0;
-    font-size: 12px;
-    color: var(--sky);
-}
-
-.ceo-info p {
-    margin-top: 6px;
-    line-height: 1.4;
-    font-size: 12px;
 }
 
 /* ================= ABOUT MINI PANEL ================= */
@@ -166,10 +117,6 @@ body {
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.12);
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    align-items: center;
 }
 
 .about-btn {
@@ -178,46 +125,28 @@ body {
     padding: 6px 12px;
     border: none;
     border-radius: 6px;
-    font-size: 12px;
     cursor: pointer;
-}
-
-.about-btn:hover {
-    background: #0284c7;
 }
 
 .about-sub {
     display: flex;
-    gap: 5px;
-    flex-wrap: wrap;
+    gap: 6px;
     justify-content: center;
+    margin-top: 6px;
 }
 
 .about-sub button {
     background: var(--sky);
-    color: var(--black);
     border: none;
     padding: 6px 10px;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 12px;
-}
-
-.about-sub button:hover {
-    background-color: #0284c7;
-    color: var(--white);
 }
 
 .about-content {
     display: none;
     margin-top: 10px;
-    line-height: 1.6;
     font-size: 12px;
-}
-
-.about-content h3 {
-    color: var(--sky);
-    margin-bottom: 4px;
 }
 
 /* ================= FOOTER ================= */
@@ -226,7 +155,6 @@ footer {
     color: var(--white);
     text-align: center;
     padding: 20px;
-    margin-top: 40px;
 }
 
 /* ================= RESPONSIVE ================= */
@@ -236,44 +164,9 @@ footer {
         align-items: center;
     }
 
-    .ceo-section, .about-mini {
+    .ceo-section,
+    .about-mini {
         width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .hero-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 20px;
-    }
-
-    .hero img.logo {
-        height: 180px;
-        margin: auto;
-    }
-
-    .hero-text {
-        margin-left: 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar a {
-        font-size: 12px;
-        padding: 6px 10px;
-    }
-
-    .hero img.logo {
-        height: 140px;
-    }
-
-    .hero-text h1 {
-        font-size: 18px;
-    }
-
-    .hero-text p {
-        font-size: 12px;
     }
 }
 </style>
@@ -281,7 +174,6 @@ footer {
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
     <a href="index.html" class="active">Home</a>
     <div class="dropdown">
@@ -294,80 +186,48 @@ footer {
     <a href="contact.html">Contact</a>
 </div>
 
-<!-- HERO -->
 <section class="hero">
     <div class="hero-content">
-        <img src="images/logo.jpg" alt="Kim Interiors Logo" class="logo">
-        <div class="hero-text">
+        <img src="images/logo.jpg" class="logo">
+        <div>
             <h1>KIM INTERIORS & CONSTRUCTION</h1>
             <p>DETAILS DEFINE THE DIFFERENCE</p>
         </div>
     </div>
 </section>
 
-<!-- MAIN CONTENT -->
 <div class="main-content">
 
     <section class="ceo-section">
-        <img src="images/ceo.jpg" alt="CEO Photo">
-        <div class="ceo-info">
-            <h2>Albright Kimutai</h2>
-            <h4>CEO – Kim Interiors & Construction Company</h4>
-            <p>
-                Albright Kimutai is the founder and CEO of Kim Interiors & Construction Company,
-                providing visionary leadership with a strong commitment to quality craftsmanship,
-                innovation, and excellence.
-            </p>
-        </div>
+        <img src="images/ceo.jpg">
+        <h2>Albright Kimutai</h2>
+        <p>CEO – Kim Interiors & Construction Company</p>
     </section>
 
     <section class="about-mini">
         <button class="about-btn" onclick="toggleAbout()">About Us</button>
         <div class="about-sub" id="aboutSub">
             <button onclick="showAbout('who')">Who We Are</button>
-            <button onclick="showAbout('mission')">Mission & Vision</button>
+            <button onclick="showAbout('mission')">Mission</button>
             <button onclick="showAbout('contacts')">Contacts</button>
         </div>
 
-        <div class="about-content" id="who">
-            <h3>Who We Are</h3>
-            <p>
-                Kim Interiors & Construction is a professional interior design and construction company
-                dedicated to modern, stylish, and functional spaces.
-            </p>
-        </div>
-
-        <div class="about-content" id="mission">
-            <h3>Mission & Vision</h3>
-            <p><strong>Mission:</strong> To transform spaces into inspiring environments.</p>
-            <p><strong>Vision:</strong> To be a leading brand in Kenya.</p>
-        </div>
-
-        <div class="about-content" id="contacts">
-            <h3>Contact Information</h3>
-            <p>
-                📍 Eldoret, Kenya<br>
-                📧 kim.interiorke@gmail.com<br>
-                📞 +254 716 631 840
-            </p>
-        </div>
+        <div class="about-content" id="who">We are a professional construction & interior firm.</div>
+        <div class="about-content" id="mission">Our mission is excellence.</div>
+        <div class="about-content" id="contacts">📞 +254 716 631 840</div>
     </section>
 
 </div>
 
-<footer>
-    &copy; 2026 KIM INTERIORS & CONSTRUCTION. All Rights Reserved.
-</footer>
+<footer>&copy; 2026 KIM INTERIORS & CONSTRUCTION</footer>
 
 <script>
 function toggleAbout() {
-    let sub = document.getElementById("aboutSub");
-    sub.style.display = sub.style.display === "flex" ? "none" : "flex";
+    let s = document.getElementById("aboutSub");
+    s.style.display = s.style.display === "flex" ? "none" : "flex";
 }
-
 function showAbout(id) {
-    document.querySelectorAll(".about-content")
-        .forEach(div => div.style.display = "none");
+    document.querySelectorAll(".about-content").forEach(d => d.style.display = "none");
     document.getElementById(id).style.display = "block";
 }
 </script>
