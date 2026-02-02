@@ -116,6 +116,12 @@ body {
     background: var(--white);
 }
 
+.ceo-section p.description {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #333;
+}
+
 /* ================= ABOUT MINI PANEL ================= */
 .about-mini {
     width: 48%;
@@ -134,6 +140,12 @@ body {
     border-radius: 8px;
     cursor: pointer;
     font-weight: bold;
+}
+
+.about-mini p.description {
+    margin-top: 8px;
+    font-size: 13px;
+    color: #333;
 }
 
 .about-sub {
@@ -243,10 +255,12 @@ footer {
         <img src="images/ceo.jpg">
         <h2>Albright Kimutai</h2>
         <p>CEO – Kim Interiors & Construction Company</p>
+        <p class="description">Albright brings over 10 years of experience in high-end construction and interior design.</p>
     </section>
 
     <section class="about-mini">
         <button class="about-btn" onclick="toggleAbout()">About Us</button>
+        <p class="description">Discover who we are, our mission, and how to contact us.</p>
 
         <div class="about-sub" id="aboutSub">
             <button onclick="showAbout('who')">Who We Are</button>
