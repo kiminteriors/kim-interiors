@@ -263,9 +263,9 @@ footer {
         <p class="description">Discover who we are, our mission, and how to contact us.</p>
 
         <div class="about-sub" id="aboutSub">
-            <button onclick="showAbout('who')">Who We Are</button>
-            <button onclick="showAbout('mission')">Mission</button>
-            <button onclick="showAbout('contacts')">Contacts</button>
+            <button onclick="toggleAboutContent('who')">Who We Are</button>
+            <button onclick="toggleAboutContent('mission')">Mission</button>
+            <button onclick="toggleAboutContent('contacts')">Contacts</button>
         </div>
 
         <div class="about-content" id="who">
@@ -291,9 +291,21 @@ function toggleAbout() {
     let s = document.getElementById("aboutSub");
     s.style.display = s.style.display === "flex" ? "none" : "flex";
 }
-function showAbout(id) {
-    document.querySelectorAll(".about-content").forEach(d => d.style.display = "none");
-    document.getElementById(id).style.display = "block";
+
+// ✅ Toggle content individually
+function toggleAboutContent(id) {
+    const content = document.getElementById(id);
+    const allContents = document.querySelectorAll(".about-content");
+
+    if (content.style.display === "block") {
+        // If already visible, hide it
+        content.style.display = "none";
+    } else {
+        // Hide all others first
+        allContents.forEach(d => d.style.display = "none");
+        // Show the clicked content
+        content.style.display = "block";
+    }
 }
 </script>
 
