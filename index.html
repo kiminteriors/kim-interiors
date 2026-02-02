@@ -5,41 +5,53 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KIM INTERIORS & CONSTRUCTION | Home</title>
 
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&display=swap" rel="stylesheet">
+
 <style>
-:root {
-    --sky: #38bdf8;
-    --white: #ffffff;
-    --black: #000000;
+/* ================= GLOBAL RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 body {
-    margin: 0;
     font-family: Arial, sans-serif;
-    background: var(--white);
-    color: var(--black);
-    font-size: 14px;
+    overflow-x: hidden;
 }
 
 /* ================= NAVBAR ================= */
+header {
+    background: #ffffff;
+    padding: 10px 20px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
 .navbar {
     display: flex;
     align-items: center;
-    gap: 20px;
-    background: var(--sky);
-    padding: 12px 20px;
+    justify-content: space-between;
 }
 
-.navbar a {
-    color: var(--white);
+.logo img {
+    width: 120px;
+}
+
+/* NAV LINKS */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
     text-decoration: none;
+    color: #000;
     font-weight: bold;
 }
 
-.navbar a.active {
-    border-bottom: 2px solid var(--white);
-}
-
-/* Dropdown */
+/* DROPDOWN */
 .dropdown {
     position: relative;
 }
@@ -47,126 +59,115 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--sky);
-    min-width: 150px;
-    border-radius: 6px;
-    flex-direction: column;
-}
-
-.dropdown:hover .dropdown-content {
-    display: flex;
+    background: #fff;
+    top: 100%;
+    left: 0;
+    min-width: 160px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    z-index: 1000;
 }
 
 .dropdown-content a {
-    padding: 10px 12px;
-    color: var(--white);
-}
-
-/* ================= HERO ================= */
-.hero {
-    background: url("images/background.jpg") center/cover no-repeat;
-    padding: 30px 15px;
-}
-
-.hero-content {
-    max-width: 1200px;
-    margin: auto;
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 40px;
-    align-items: center;
-}
-
-.hero img.logo {
-    height: 300px;
-}
-
-/* ================= MAIN CONTENT ================= */
-.main-content {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 40px auto;
-    gap: 20px;
-    padding: 0 20px;
-    flex-wrap: nowrap; /* ✅ CEO LEFT, ABOUT RIGHT */
-}
-
-/* ================= CEO SECTION ================= */
-.ceo-section {
-    width: 48%;
-    background: var(--white);
-    padding: 15px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-    text-align: center;
-}
-
-.ceo-section img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    border: 3px solid var(--sky);
-}
-
-/* ================= ABOUT MINI PANEL ================= */
-.about-mini {
-    width: 48%;
-    background: var(--white);
+    display: block;
     padding: 10px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-    text-align: center;
+    color: #000;
 }
 
-.about-btn {
-    background: var(--sky);
-    color: var(--white);
-    padding: 6px 12px;
-    border: none;
-    border-radius: 6px;
-    cursor: pointer;
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
-.about-sub {
+/* CONTACT BUTTON */
+.contact-btn {
+    background: #38bdf8;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+/* ================= HERO SECTION ================= */
+.hero {
+    min-height: 90vh;
+    background: url("images/background.jpg") center/cover no-repeat;
     display: flex;
-    gap: 6px;
+    align-items: center;
     justify-content: center;
-    margin-top: 6px;
-}
-
-.about-sub button {
-    background: var(--sky);
-    border: none;
-    padding: 6px 10px;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.about-content {
-    display: none;
-    margin-top: 10px;
-    font-size: 12px;
-}
-
-/* ================= FOOTER ================= */
-footer {
-    background: var(--sky);
-    color: var(--white);
-    text-align: center;
     padding: 20px;
 }
 
-/* ================= RESPONSIVE ================= */
-@media (max-width: 1024px) {
-    .main-content {
-        flex-direction: column;
-        align-items: center;
+/* HERO TEXT BOX */
+.hero-content {
+    background: rgba(255,255,255,0.75);
+    padding: 25px;
+    border-radius: 15px;
+    max-width: 600px;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+}
+
+/* HERO BUTTON */
+.hero-content a {
+    display: inline-block;
+    background: #38bdf8;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* ================= MOBILE VIEW ================= */
+@media (max-width: 768px) {
+
+    .logo img {
+        width: 95px;
     }
 
-    .ceo-section,
-    .about-mini {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background: #fff;
         width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 15px 0;
+    }
+
+    .nav-links a {
+        padding: 10px 0;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+    }
+
+    /* HERO */
+    .hero {
+        min-height: 100vh;
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
     }
 }
 </style>
@@ -174,63 +175,37 @@ footer {
 
 <body>
 
-<div class="navbar">
-    <a href="index.html" class="active">Home</a>
-    <div class="dropdown">
-        <a href="#">Services ▼</a>
-        <div class="dropdown-content">
-            <a href="construction.html">Constructions</a>
-            <a href="interior.html">Interior Designs</a>
+<!-- ================= HEADER ================= -->
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <img src="images/logo.png" alt="KIM Logo">
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+
+            <div class="dropdown">
+                <a>Services ▼</a>
+                <div class="dropdown-content">
+                    <a href="interior.html">Interior Designs</a>
+                </div>
+            </div>
+
+            <a href="about.html">About</a>
+            <a href="contact.html" class="contact-btn">Contact</a>
         </div>
     </div>
-    <a href="contact.html">Contact</a>
-</div>
+</header>
 
+<!-- ================= HERO ================= -->
 <section class="hero">
     <div class="hero-content">
-        <img src="images/logo.jpg" class="logo">
-        <div>
-            <h1>KIM INTERIORS & CONSTRUCTION</h1>
-            <p>DETAILS DEFINE THE DIFFERENCE</p>
-        </div>
+        <h1>KIM INTERIORS & CONSTRUCTION</h1>
+        <p>We design, build, and transform spaces with precision, style, and excellence.</p>
+        <a href="contact.html">Get in Touch</a>
     </div>
 </section>
-
-<div class="main-content">
-
-    <section class="ceo-section">
-        <img src="images/ceo.jpg">
-        <h2>Albright Kimutai</h2>
-        <p>CEO – Kim Interiors & Construction Company</p>
-    </section>
-
-    <section class="about-mini">
-        <button class="about-btn" onclick="toggleAbout()">About Us</button>
-        <div class="about-sub" id="aboutSub">
-            <button onclick="showAbout('who')">Who We Are</button>
-            <button onclick="showAbout('mission')">Mission</button>
-            <button onclick="showAbout('contacts')">Contacts</button>
-        </div>
-
-        <div class="about-content" id="who">We are a professional construction & interior firm.</div>
-        <div class="about-content" id="mission">Our mission is excellence.</div>
-        <div class="about-content" id="contacts">📞 +254 716 631 840</div>
-    </section>
-
-</div>
-
-<footer>&copy; 2026 KIM INTERIORS & CONSTRUCTION</footer>
-
-<script>
-function toggleAbout() {
-    let s = document.getElementById("aboutSub");
-    s.style.display = s.style.display === "flex" ? "none" : "flex";
-}
-function showAbout(id) {
-    document.querySelectorAll(".about-content").forEach(d => d.style.display = "none");
-    document.getElementById(id).style.display = "block";
-}
-</script>
 
 </body>
 </html>
