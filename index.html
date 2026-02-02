@@ -66,11 +66,25 @@ body {
 
 /* ================= HERO ================= */
 .hero {
+    position: relative; /* Needed for overlay */
     background: url("images/background.jpg") center/cover no-repeat;
     padding: 30px 15px;
 }
 
+/* Overlay to fade background image */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.4); /* Adjust opacity for fade */
+    z-index: 0;
+}
+
 .hero-content {
+    position: relative; /* Bring content above overlay */
     max-width: 1200px;
     margin: auto;
     display: grid;
@@ -78,6 +92,7 @@ body {
     gap: 40px;
     align-items: center;
     margin-left: 20px;
+    z-index: 1;
 }
 
 .hero img.logo {
@@ -278,7 +293,7 @@ footer {
             📞 +254 716 631 840<br>
             📧 info@kiminteriors.co.ke<br>
             📍 Eldoret, Kenya<br>
-        Feel free to reach out for consultations or inquiries.
+            We are available Monday to Friday from 8:00 AM to 5:00 PM. Feel free to reach out for consultations or inquiries.
         </div>
     </section>
 
@@ -292,23 +307,17 @@ function toggleAbout() {
     s.style.display = s.style.display === "flex" ? "none" : "flex";
 }
 
-// ✅ Toggle content individually
+// Toggle content individually and allow collapse on same button
 function toggleAboutContent(id) {
     const content = document.getElementById(id);
-    const allContents = document.querySelectorAll(".about-content");
-
     if (content.style.display === "block") {
-        // If already visible, hide it
-        content.style.display = "none";
+        content.style.display = "none"; // collapse if already open
     } else {
-        // Hide all others first
-        allContents.forEach(d => d.style.display = "none");
-        // Show the clicked content
-        content.style.display = "block";
+        document.querySelectorAll(".about-content").forEach(d => d.style.display = "none"); // hide others
+        content.style.display = "block"; // show clicked
     }
 }
 </script>
 
 </body>
 </html>
-
