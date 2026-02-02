@@ -27,6 +27,7 @@ body {
     gap: 20px;
     background: var(--sky);
     padding: 12px 20px;
+    flex-wrap: wrap; /* ✅ allow wrapping on mobile */
 }
 
 .navbar a {
@@ -89,7 +90,7 @@ body {
     margin: 40px auto;
     gap: 20px;
     padding: 0 20px;
-    flex-wrap: nowrap; /* ✅ CEO LEFT, ABOUT RIGHT */
+    flex-wrap: nowrap;
 }
 
 /* ================= CEO SECTION ================= */
@@ -133,6 +134,7 @@ body {
     gap: 6px;
     justify-content: center;
     margin-top: 6px;
+    flex-wrap: wrap; /* ✅ prevent overflow on small screens */
 }
 
 .about-sub button {
@@ -167,6 +169,38 @@ footer {
     .ceo-section,
     .about-mini {
         width: 100%;
+    }
+}
+
+/* ================= MOBILE FIX (NO CONTENT CHANGES) ================= */
+@media (max-width: 600px) {
+
+    .navbar {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr; /* ✅ stack logo & text */
+        text-align: center;
+        gap: 20px;
+    }
+
+    .hero img.logo {
+        height: 180px; /* ✅ smaller logo for phone */
+        margin: auto;
+    }
+
+    .hero h1 {
+        font-size: 18px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    body {
+        font-size: 13px;
     }
 }
 </style>
