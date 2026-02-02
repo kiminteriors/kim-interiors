@@ -27,7 +27,7 @@ body {
     gap: 20px;
     background: var(--sky);
     padding: 12px 20px;
-    flex-wrap: wrap; /* ✅ allow wrapping on mobile */
+    flex-wrap: wrap;
 }
 
 .navbar a {
@@ -82,6 +82,11 @@ body {
     height: 300px;
 }
 
+/* ✅ ONLY CHANGE: Algerian font */
+.hero h1 {
+    font-family: Algerian, "Algeria", serif;
+}
+
 /* ================= MAIN CONTENT ================= */
 .main-content {
     display: flex;
@@ -134,7 +139,7 @@ body {
     gap: 6px;
     justify-content: center;
     margin-top: 6px;
-    flex-wrap: wrap; /* ✅ prevent overflow on small screens */
+    flex-wrap: wrap;
 }
 
 .about-sub button {
@@ -172,7 +177,6 @@ footer {
     }
 }
 
-/* ================= MOBILE FIX (NO CONTENT CHANGES) ================= */
 @media (max-width: 600px) {
 
     .navbar {
@@ -181,13 +185,13 @@ footer {
     }
 
     .hero-content {
-        grid-template-columns: 1fr; /* ✅ stack logo & text */
+        grid-template-columns: 1fr;
         text-align: center;
         gap: 20px;
     }
 
     .hero img.logo {
-        height: 180px; /* ✅ smaller logo for phone */
+        height: 180px;
         margin: auto;
     }
 
