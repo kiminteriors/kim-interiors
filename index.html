@@ -29,7 +29,7 @@ body {
     padding: 12px 20px;
     flex-wrap: wrap;
     position: relative;
-    z-index: 10; /* make navbar clickable above everything */
+    z-index: 10;
 }
 
 .navbar a {
@@ -54,7 +54,7 @@ body {
     min-width: 150px;
     border-radius: 6px;
     flex-direction: column;
-    z-index: 11; /* dropdown above overlay */
+    z-index: 11;
 }
 
 .dropdown:hover .dropdown-content {
@@ -68,12 +68,12 @@ body {
 
 /* ================= HERO ================= */
 .hero {
-    position: relative; /* Needed for overlay */
+    position: relative;
     background: url("images/background.jpg") center/cover no-repeat;
     padding: 30px 15px;
 }
 
-/* Overlay to slightly fade the background */
+/* FULL FADE OVERLAY */
 .hero::before {
     content: "";
     position: absolute;
@@ -81,12 +81,12 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(255, 255, 255, 0.3); /* slightly faded */
+    background: rgba(255, 255, 255, 1); /* FULLY FADED */
     z-index: 0;
 }
 
 .hero-content {
-    position: relative; /* content above overlay */
+    position: relative;
     max-width: 1200px;
     margin: auto;
     display: grid;
@@ -304,14 +304,13 @@ function toggleAbout() {
     s.style.display = s.style.display === "flex" ? "none" : "flex";
 }
 
-// Toggle content individually and allow collapse on same button
 function toggleAboutContent(id) {
     const content = document.getElementById(id);
     if (content.style.display === "block") {
-        content.style.display = "none"; // collapse if already open
+        content.style.display = "none";
     } else {
-        document.querySelectorAll(".about-content").forEach(d => d.style.display = "none"); // hide others
-        content.style.display = "block"; // show clicked
+        document.querySelectorAll(".about-content").forEach(d => d.style.display = "none");
+        content.style.display = "block";
     }
 }
 </script>
