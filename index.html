@@ -24,15 +24,16 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* logo left, links right */
+    justify-content: flex-end; /* all items aligned to the right */
     background: var(--sky);
     padding: 15px 30px;
     flex-wrap: wrap;
 }
 
 .nav-logo img {
-    height: 150px; /* enlarged 3 times from original 50px */
+    height: 150px; /* enlarged logo */
     width: auto;
+    margin-left: 20px; /* small gap from menu */
 }
 
 .nav-links {
@@ -194,6 +195,7 @@ footer {
     .navbar {
         flex-direction: column;
         gap: 10px;
+        justify-content: center; /* center logo and links on small screens */
     }
     .nav-links {
         flex-direction: column;
@@ -206,15 +208,15 @@ footer {
 <body>
 
 <div class="navbar">
-    <div class="nav-logo">
-        <img src="images/logo.jpg" alt="KIM Interiors & Construction Logo">
-    </div>
     <ul class="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="construction.html">Construction</a></li>
         <li><a href="interior.html">Interior</a></li>
         <li><a href="contact.html">Contact</a></li>
     </ul>
+    <div class="nav-logo">
+        <img src="images/logo.jpg" alt="KIM Interiors & Construction Logo">
+    </div>
 </div>
 
 <section class="hero">
