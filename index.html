@@ -47,7 +47,7 @@ body {
 }
 
 .nav-logo img {
-    height: 75px; /* reduced logo size by half */
+    height: 75px; /* logo size */
     width: auto;
 }
 
@@ -192,17 +192,21 @@ footer {
     .hero h1 { font-size: 28px; }
     .hero p { font-size: 16px; }
 
-    /* Navbar buttons stay in a row at far left on mobile */
+    /* Navbar mobile view: buttons left, logo far right */
     .navbar {
-        flex-direction: column;
-        align-items: flex-start; /* left align */
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
         gap: 10px;
     }
     .nav-links {
-        flex-direction: row; /* row on mobile */
+        flex-direction: row;
         gap: 10px;
-        justify-content: flex-start; /* far left */
+        justify-content: flex-start; /* buttons far left */
         width: auto;
+    }
+    .nav-logo {
+        order: 1; /* logo after buttons */
     }
 }
 </style>
