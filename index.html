@@ -47,7 +47,7 @@ body {
 }
 
 .nav-logo img {
-    height: 75px; /* logo size */
+    height: 75px; /* reduced logo size */
     width: auto;
 }
 
@@ -192,21 +192,19 @@ footer {
     .hero h1 { font-size: 28px; }
     .hero p { font-size: 16px; }
 
-    /* Navbar mobile view: buttons left, logo far right */
+    /* Navbar mobile view: buttons left, logo right (inline) */
     .navbar {
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
         align-items: center;
         gap: 10px;
     }
     .nav-links {
         flex-direction: row;
         gap: 10px;
-        justify-content: flex-start; /* buttons far left */
-        width: auto;
     }
     .nav-logo {
-        order: 1; /* logo after buttons */
+        margin-left: 10px; /* logo appears immediately to the right of buttons */
     }
 }
 </style>
