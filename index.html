@@ -24,16 +24,10 @@ body {
 .navbar {
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* all items aligned to the right */
+    justify-content: space-between; /* buttons left, logo right */
     background: var(--sky);
     padding: 15px 30px;
     flex-wrap: wrap;
-}
-
-.nav-logo img {
-    height: 150px; /* enlarged logo */
-    width: auto;
-    margin-left: 20px; /* small gap from menu */
 }
 
 .nav-links {
@@ -50,6 +44,11 @@ body {
 
 .nav-links li a:hover {
     color: #d4af37;
+}
+
+.nav-logo img {
+    height: 150px; /* enlarged logo */
+    width: auto;
 }
 
 /* ================= HERO ================= */
@@ -195,7 +194,7 @@ footer {
     .navbar {
         flex-direction: column;
         gap: 10px;
-        justify-content: center; /* center logo and links on small screens */
+        justify-content: center;
     }
     .nav-links {
         flex-direction: column;
