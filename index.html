@@ -23,11 +23,12 @@ body {
 /* ================= NAVBAR ================= */
 .navbar {
     display: flex;
-    align-items: center;
-    justify-content: space-between; /* buttons left, logo right */
+    align-items: flex-start; /* align items to top to allow logo overflow */
+    justify-content: space-between;
     background: var(--sky);
     padding: 15px 30px;
-    flex-wrap: wrap;
+    flex-wrap: nowrap; /* prevent wrapping */
+    width: max-content; /* shrink navbar to fit only buttons */
 }
 
 .nav-links {
@@ -47,8 +48,10 @@ body {
 }
 
 .nav-logo img {
-    height: 150px; /* enlarged logo */
+    height: 150px; /* logo size remains large */
     width: auto;
+    margin-left: 20px; /* spacing from navbar buttons */
+    position: relative;
 }
 
 /* ================= HERO ================= */
@@ -194,7 +197,8 @@ footer {
     .navbar {
         flex-direction: column;
         gap: 10px;
-        justify-content: center;
+        width: 100%; /* allow full width on mobile */
+        align-items: flex-start;
     }
     .nav-links {
         flex-direction: column;
